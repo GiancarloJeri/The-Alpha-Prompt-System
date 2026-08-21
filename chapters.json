@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "Investigación y Estrategia"
+  },
+  {
+    "id": 2,
+    "title": "Storytelling"
+  },
+  {
+    "id": 3,
+    "title": "Escritura de Guiones"
+  },
+  {
+    "id": 4,
+    "title": "Storyboards"
+  },
+  {
+    "id": 5,
+    "title": "Consistencia de Personajes"
+  },
+  {
+    "id": 6,
+    "title": "Consistencia de Productos"
+  },
+  {
+    "id": 7,
+    "title": "Generación de Imágenes"
+  },
+  {
+    "id": 8,
+    "title": "Fotografía de Producto"
+  },
+  {
+    "id": 9,
+    "title": "GENERACIÓN DE VIDEO"
+  },
+  {
+    "id": 10,
+    "title": "MOVIMIENTOS DE CÁMARA"
+  },
+  {
+    "id": 11,
+    "title": "MÚSICA Y DISEÑO MUSICAL CON IA"
+  },
+  {
+    "id": 12,
+    "title": "VOZ Y DIRECCIÓN DE VOZ CON IA"
+  },
+  {
+    "id": 13,
+    "title": "INGENIERÍA DE PROMPTS"
+  },
+  {
+    "id": 14,
+    "title": "FRAMEWORKS JSON"
+  }
+]

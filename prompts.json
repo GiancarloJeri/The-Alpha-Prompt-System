@@ -1,0 +1,1533 @@
+[
+  {
+    "id": 1,
+    "title": "ANÁLISIS DE PRODUCTO",
+    "chapter": 1,
+    "chapter_title": "Investigación y Estrategia",
+    "purpose": "Utiliza este prompt para comprender en profundidad un producto o servicio antes de desarrollar una estrategia de marketing, escribir un guion, crear una campaña publicitaria o generar contenido con Inteligencia Artificial. Este análisis te permitirá identificar oportunidades de venta, ventajas competitivas y conocer mejor a tu cliente ideal.",
+    "variables": [
+      "[PRODUCT] → Nombre del producto o servicio que deseas analizar."
+    ],
+    "prompt": "Act as a senior marketing strategist and consumer behavior expert.\nAnalyze the following product or service:\nProduct: [PRODUCT]\nYour objective is to generate a comprehensive marketing analysis that can be used as the foundation for advertising campaigns, content creation, and sales strategies.\nIdentify and explain:\n- The main problems the product solves\n- Functional benefits\n- Emotional benefits\n- Unique selling points (USP)\n- Key competitive advantages\n- Target audience profile\n- Purchase motivations\n- Common buying objections\n- Potential market opportunities\n- Suggested positioning strategy\nPresent the results in a clear, well-organized table with actionable insights.",
+    "is_json": false
+  },
+  {
+    "id": 2,
+    "title": "AVATAR DEL CLIENTE IDEAL",
+    "chapter": 1,
+    "chapter_title": "Investigación y Estrategia",
+    "purpose": "Este prompt permite construir un perfil detallado del cliente ideal. Es recomendable utilizarlo después del análisis de producto para conocer mejor a quién va dirigido el contenido y facilitar la creación de campañas publicitarias más efectivas.",
+    "variables": [
+      "[PRODUCT] → Producto o servicio."
+    ],
+    "prompt": "Act as a customer research specialist and consumer behavior expert.\nBased on the following product or service:\nProduct: [PRODUCT]\nCreate a detailed customer avatar.\nInclude:\n- Name\n- Age range\n- Gender\n- Occupation\n- Income level\n- Education\n- Interests\n- Lifestyle\n- Values\n- Goals\n- Pain points\n- Desires\n- Frustrations\n- Buying motivations\n- Buying objections\n- Preferred social media platforms\n- Online behavior\n- Preferred communication style\n- Purchasing habits\nPresent the information in a structured profile that can be used for marketing and advertising campaigns.",
+    "is_json": false
+  },
+  {
+    "id": 3,
+    "title": "DOLORES DEL CLIENTE",
+    "chapter": 1,
+    "chapter_title": "Investigación y Estrategia",
+    "purpose": "Identificar los principales problemas, frustraciones y necesidades del cliente ideal. Estos dolores serán la base para construir anuncios, guiones, ofertas y mensajes publicitarios que conecten emocionalmente con la audiencia.",
+    "variables": [
+      "[PRODUCT] → Producto o servicio."
+    ],
+    "prompt": "Act as a market research expert and consumer psychologist.\nAnalyze the target audience for the following product: [PRODUCT]\nGenerate the 15 most significant pain points experienced by the ideal customer.\nFor each pain point include:\n- Pain Point\n- Why it matters\n- Emotional impact\n- How the product helps solve it\nPresent the results in a table ranked from most important to least important.",
+    "is_json": false
+  },
+  {
+    "id": 4,
+    "title": "DESEOS DEL CLIENTE",
+    "chapter": 1,
+    "chapter_title": "Investigación y Estrategia",
+    "purpose": "Descubrir las aspiraciones, objetivos y resultados que el cliente realmente desea alcanzar. Este prompt ayuda a construir mensajes que venden transformación y no solo características del producto.",
+    "variables": [
+      "[PRODUCT] → Producto o servicio."
+    ],
+    "prompt": "Act as a consumer behavior specialist for the following product: [PRODUCT]\nIdentify the top 15 desires of the ideal customer.\nFor each desire explain:\n- Desired outcome\n- Emotional motivation\n- Why it is important\n- How the product fulfills that desire\nRank them from highest to lowest priority.",
+    "is_json": false
+  },
+  {
+    "id": 5,
+    "title": "MIEDOS DEL CLIENTE",
+    "chapter": 1,
+    "chapter_title": "Investigación y Estrategia",
+    "purpose": "Identificar los temores y preocupaciones que pueden impedir la compra. Con esta información podrás crear mensajes que reduzcan objeciones y generen mayor confianza.",
+    "variables": [
+      "[PRODUCT] → Producto o servicio."
+    ],
+    "prompt": "Act as a consumer psychology expert and analyze the target audience for:\nProduct: [PRODUCT]\nIdentify the 15 biggest fears related to purchasing or using this type of product.\nFor each fear explain:\n- The fear\n- The underlying cause\n- Emotional impact\n- How the brand can reduce or eliminate it\nPresent the information in a structured table.",
+    "is_json": false
+  },
+  {
+    "id": 6,
+    "title": "ASPIRACIONES DEL CLIENTE",
+    "chapter": 1,
+    "chapter_title": "Investigación y Estrategia",
+    "purpose": "Este prompt permite descubrir las metas, sueños y aspiraciones del cliente ideal. Es especialmente útil para crear campañas publicitarias que vendan una transformación o un estilo de vida, en lugar de simplemente promocionar un producto.",
+    "variables": [
+      "[PRODUCT] → Nombre del producto o servicio."
+    ],
+    "prompt": "Act as a consumer insights specialist and behavioral psychologist.\nAnalyze the ideal customer for the following product or service:\nProduct: [PRODUCT]\nIdentify the top 15 aspirations of the target audience.\nFor each aspiration provide:\n- Aspiration\n- Why it matters\n- Emotional driver\n- Desired transformation\n- How the product helps achieve that aspiration\nRank the aspirations from highest to lowest emotional impact.\nPresent the information in a structured table with actionable marketing insights.",
+    "is_json": false
+  },
+  {
+    "id": 7,
+    "title": "ANÁLISIS DE LA COMPETENCIA",
+    "chapter": 1,
+    "chapter_title": "Investigación y Estrategia",
+    "purpose": "Analizar a los principales competidores para identificar oportunidades de diferenciación, detectar fortalezas y debilidades del mercado y construir una propuesta de valor más competitiva.",
+    "variables": [
+      "[PRODUCT] → Producto o servicio."
+    ],
+    "prompt": "Act as a senior competitive intelligence analyst and analyze the competitive landscape for the following product or service:\nProduct: [PRODUCT]\nIdentify the main competitors and provide the following analysis:\n- Competitor Name\n- Strengths\n- Weaknesses\n- Pricing Strategy\n- Brand Positioning\n- Marketing Style\n- Target Audience\n- Content Strategy\n- Unique Selling Points\nFinally, recommend:\n- Market opportunities\n- Competitive advantages to emphasize\n- Ways to differentiate the brand\n- Untapped positioning opportunities\nPresent the results in a structured comparison table.",
+    "is_json": false
+  },
+  {
+    "id": 8,
+    "title": "PROPUESTA ÚNICA DE VALOR (USP)",
+    "chapter": 1,
+    "chapter_title": "Investigación y Estrategia",
+    "purpose": "Generar propuestas únicas de valor que permitan diferenciar el producto frente a la competencia y comunicar claramente por qué un cliente debería elegirlo.",
+    "variables": [
+      "[PRODUCT] → Producto o servicio."
+    ],
+    "prompt": "Act as a senior brand strategist and positioning expert and based on the following product or service: Product: [PRODUCT]\nGenerate 10 unique selling propositions (USPs).\nEach USP should include:\n- Headline\n- Core Value Proposition\n- Emotional Benefit\n- Functional Benefit\n- Target Customer\n- Competitive Advantage\nThe propositions should be persuasive, memorable, and suitable for modern digital marketing campaigns.",
+    "is_json": false
+  },
+  {
+    "id": 9,
+    "title": "GENERADOR DE OFERTA IRRESISTIBLE",
+    "chapter": 1,
+    "chapter_title": "Investigación y Estrategia",
+    "purpose": "Construir una oferta de alto valor percibido que aumente la intención de compra mediante una combinación de beneficios, bonos, garantías y elementos de urgencia.",
+    "variables": [
+      "[PRODUCT] → Producto o servicio.",
+      "[TARGET AUDIENCE] → Público objetivo."
+    ],
+    "prompt": "Act as a direct response marketing strategist and create an irresistible offer for the following product or service:\nProduct: [PRODUCT]\nTarget Audience: [TARGET AUDIENCE]\nInclude:\n- Core Offer\n- Value Proposition\n- Key Benefits\n- Bonus #1\n- Bonus #2\n- Bonus #3\n- Guarantee\n- Urgency\n- Scarcity\n- Risk Reversal\n- Strong Call to Action\nPresent the offer in a persuasive format suitable for landing pages, sales videos, and advertising campaigns.",
+    "is_json": false
+  },
+  {
+    "id": 10,
+    "title": "Estrategia de Marketing",
+    "chapter": 1,
+    "chapter_title": "Investigación y Estrategia",
+    "purpose": "Diseñar una estrategia de marketing integral antes de comenzar la producción de contenido. Este prompt ayuda a definir objetivos, canales, mensajes clave y acciones recomendadas para una campaña.",
+    "variables": [
+      "[PRODUCT] → Producto o servicio.",
+      "[TARGET AUDIENCE] → Público objetivo.",
+      "[OBJECTIVE] → Objetivo principal de la campaña (ventas, generación de leads, reconocimiento de marca, lanzamiento, etc.)."
+    ],
+    "prompt": "Act as a Chief Marketing Officer (CMO) with expertise in digital marketing, branding, and AI-driven content strategies and develop a complete marketing strategy for the following product or service:\nProduct: [PRODUCT]\nTarget Audience: [TARGET AUDIENCE]\nCampaign Objective: [OBJECTIVE]\nInclude:\n- Brand Positioning\n- Marketing Objectives\n- Customer Persona Summary\n- Key Messaging\n- Content Pillars\n- Recommended Marketing Channels\n- Social Media Strategy\n- Advertising Strategy\n- Content Funnel\n- Suggested KPIs\n- Recommended AI Content Types\n- Action Plan for the First 30 Days\nPresent the strategy in a professional report with clear recommendations.\nCAPÍTULO 2\nStorytelling",
+    "is_json": false
+  },
+  {
+    "id": 11,
+    "title": "GENERADOR DE STORYTELLING",
+    "chapter": 2,
+    "chapter_title": "Storytelling",
+    "purpose": "Este prompt permite crear una historia comercial utilizando una estructura narrativa diseñada para captar la atención, conectar emocionalmente con la audiencia y conducir naturalmente hacia una llamada a la acción.",
+    "variables": [
+      "[PRODUCT] → Producto o servicio.",
+      "[TARGET AUDIENCE] → Público objetivo.",
+      "[FORMAT] → TikTok, Reel, Spot, etc.",
+      "[DURATION] → Duración aproximada."
+    ],
+    "prompt": "Act as an award-winning advertising copywriter and storytelling expert and create a compelling story for the following product or service.\nProduct: [PRODUCT]\nTarget Audience: [TARGET AUDIENCE]\nFormat: [TikTok / Instagram Reel / Commercial Spot / YouTube Video]\nDuration: [DURATION]\nFollow this storytelling framework:\n1. Hook – Capture attention within the first 3 seconds.\n2. Problem – Introduce a relatable pain point.\n3. Solution – Present the product naturally as the solution.\n4. Transformation – Show the emotional and practical benefits.\n5. Call to Action – End with a persuasive CTA.\nCreative Guidelines:\n- Keep the story emotionally engaging.\n- Focus on transformation rather than product features.\n- Use natural and conversational language.\n- Make the story memorable and authentic.\n- Optimize pacing for short-form content.\nOutput the story scene by scene.",
+    "is_json": false
+  },
+  {
+    "id": 12,
+    "title": "HISTORIA EMOCIONAL",
+    "chapter": 2,
+    "chapter_title": "Storytelling",
+    "purpose": "Crear historias cuyo principal objetivo sea despertar emociones y generar una conexión profunda con la audiencia.",
+    "variables": [
+      "[PRODUCT]",
+      "[TARGET AUDIENCE]",
+      "[EMOTION] → Hope, Joy, Trust, Nostalgia, Inspiration, etc."
+    ],
+    "prompt": "Act as a master storyteller specializing in emotional advertising and create an emotionally powerful story for:\nProduct: [PRODUCT]\nTarget Audience: [TARGET AUDIENCE]\nPrimary Emotion: [EMOTION]\nThe story should:\n- Capture attention immediately.\n- Build empathy.\n- Create emotional tension.\n- Deliver a meaningful transformation.\n- End with hope and inspiration.\nWrite the story scene by scene using cinematic language.",
+    "is_json": false
+  },
+  {
+    "id": 13,
+    "title": "HISTORIA DE MARCA",
+    "chapter": 2,
+    "chapter_title": "Storytelling",
+    "purpose": "Construir la historia detrás de una empresa o marca para fortalecer su identidad y generar confianza.",
+    "variables": [
+      "[BRAND]",
+      "[INDUSTRY]",
+      "[MISSION]",
+      "[VISION]",
+      "[VALUES]"
+    ],
+    "prompt": "Act as a brand storytelling strategist and create a compelling brand story for:\nBrand: [BRAND]\nIndustry: [INDUSTRY]\nMission: [MISSION]\nVision: [VISION]\nCore Values: [VALUES]\nThe story should include:\n- Origin\n- Challenge\n- Purpose\n- Mission\n- Customer Impact\n- Future Vision\nWrite the story in a way that builds trust, credibility, and emotional connection.",
+    "is_json": false
+  },
+  {
+    "id": 14,
+    "title": "HISTORIA VIRAL",
+    "chapter": 2,
+    "chapter_title": "Storytelling",
+    "purpose": "Diseñar historias pensadas para captar la atención rápidamente y aumentar las probabilidades de viralización en redes sociales.",
+    "variables": [
+      "[PRODUCT]",
+      "[TARGET AUDIENCE]",
+      "[PLATFORM]"
+    ],
+    "prompt": "Act as a viral content strategist and create a highly engaging short-form story for:\nProduct: [PRODUCT]\nTarget Audience: [TARGET AUDIENCE]\nPlatform: [TikTok / Instagram Reels / YouTube Shorts]\nRequirements:\n- Strong hook within 3 seconds.\n- Unexpected twist.\n- Emotional payoff.\n- Curiosity-driven pacing.\n- Memorable ending.\n- Strong call to action.\nOptimize the story for audience retention and social sharing.",
+    "is_json": false
+  },
+  {
+    "id": 15,
+    "title": "HISTORIA DE TRANSFORMACIÓN",
+    "chapter": 2,
+    "chapter_title": "Storytelling",
+    "purpose": "Mostrar el cambio que experimenta una persona antes y después de utilizar un producto o servicio.",
+    "variables": [
+      "[PRODUCT]",
+      "[TARGET AUDIENCE]"
+    ],
+    "prompt": "Act as a commercial storytelling expert and create a transformation story for:\nProduct: [PRODUCT]\nTarget Audience: [TARGET AUDIENCE]\nShow the complete transformation journey:\n- Before\n- Frustration\n- Discovery\n- Solution\n- Transformation\n- New Lifestyle\nFocus on emotional impact rather than product features.\nDeliver the story scene by scene.",
+    "is_json": false
+  },
+  {
+    "id": 16,
+    "title": "Historia Inspiracional",
+    "chapter": 2,
+    "chapter_title": "Storytelling",
+    "purpose": "Crear historias motivacionales que transmitan valores, propósito y crecimiento personal.",
+    "variables": [
+      "[PRODUCT]",
+      "[TARGET AUDIENCE]",
+      "[THEME]"
+    ],
+    "prompt": "Act as an inspirational storyteller and write an inspiring story centered around:\nProduct: [PRODUCT]\nAudience: [TARGET AUDIENCE]\nTheme: [THEME]\nThe story should communicate:\n- Courage\n- Growth\n- Determination\n- Hope\n- Positive Transformation\nWrite using cinematic and emotionally engaging language.",
+    "is_json": false
+  },
+  {
+    "id": 17,
+    "title": "Historia Cinematográfica",
+    "chapter": 2,
+    "chapter_title": "Storytelling",
+    "purpose": "Desarrollar historias con una narrativa visual digna de un comercial premium o una producción cinematográfica.",
+    "variables": [
+      "[PRODUCT]",
+      "[STYLE]",
+      "[EMOTION]",
+      "[DURATION]"
+    ],
+    "prompt": "Act as an award-winning film director and cinematic storyteller and create a cinematic story for:\nProduct: [PRODUCT]\nVisual Style: [STYLE]\nEmotion: [EMOTION]\nDuration: [DURATION]\nDescribe each scene including:\n- Visual composition\n- Character actions\n- Emotional objective\n- Camera movement\n- Atmosphere\nThe story should feel like a luxury commercial.",
+    "is_json": false
+  },
+  {
+    "id": 18,
+    "title": "Generador de Concepto Creativo",
+    "chapter": 2,
+    "chapter_title": "Storytelling",
+    "purpose": "Crear una idea central que sirva como base para una campaña publicitaria completa antes de escribir el guion.",
+    "variables": [
+      "[PRODUCT] → Producto o servicio.",
+      "[TARGET AUDIENCE] → Público objetivo.",
+      "[OBJECTIVE] → Objetivo de la campaña."
+    ],
+    "prompt": "Act as a senior creative director at a global advertising agency.\nDevelop a unique creative concept for the following product or service:\nProduct: [PRODUCT]\nTarget Audience: [TARGET AUDIENCE]\nCampaign Objective: [OBJECTIVE]\nGenerate:\n- Big Idea\n- Campaign Theme\n- Key Message\n- Emotional Hook\n- Visual Style\n- Tone of Voice\n- Tagline\n- Suggested Story Direction\nThe concept should be original, memorable, emotionally engaging, and suitable for AI-generated content production.\nCAPÍTULO 3\nEscritura de Guiones",
+    "is_json": false
+  },
+  {
+    "id": 19,
+    "title": "Guion Comercial",
+    "chapter": 3,
+    "chapter_title": "Escritura de Guiones",
+    "purpose": "Crear un guion publicitario profesional para anuncios, campañas comerciales y contenido de alto impacto en redes sociales.",
+    "variables": [
+      "[PRODUCT]",
+      "[TARGET AUDIENCE]",
+      "[OBJECTIVE]",
+      "[DURATION]",
+      "[BRAND PERSONALITY]",
+      "[EMOTION]"
+    ],
+    "prompt": "Act as an award-winning Creative Director, Commercial Scriptwriter, and Film Director specializing in high-converting advertising campaigns. Create a commercial script for the following project.\nProduct: [PRODUCT]\nTarget Audience: [TARGET AUDIENCE]\nCampaign Objective: [OBJECTIVE]\nPlatform: [Instagram Reels / TikTok / YouTube Shorts]\nDuration: [DURATION]\nBrand Personality: [BRAND PERSONALITY]\nDesired Emotion: [EMOTION]\nFollow this structure:\n1. Hook\n2. Problem\n3. Solution\n4. Transformation\n5. Call to Action\nOutput the script scene by scene. Each scene must include:\n- Scene Number\n- Duration\n- Visual Description\n- Camera Shot\n- Character Action\n- Dialogue or Voiceover\n- On-screen Text\n- Emotional Objective",
+    "is_json": false
+  },
+  {
+    "id": 20,
+    "title": "Guion UGC",
+    "chapter": 3,
+    "chapter_title": "Escritura de Guiones",
+    "purpose": "Crear guiones con apariencia de contenido orgánico, ideales para anuncios tipo UGC, TikTok e Instagram.",
+    "variables": [],
+    "prompt": "Act as a professional UGC creator and social media copywriter.\nWrite a natural user-generated content (UGC) script.\nProduct: [PRODUCT]\nTarget Audience: [TARGET AUDIENCE]\nPlatform: [TikTok / Instagram Reels]\nDuration: [DURATION]\nStructure:\n- Attention Grabber\n- Personal Experience\n- Problem\n- Discovery\n- Solution\n- Result\n- Recommendation\n- Call to Action\nThe script should sound authentic, conversational, and trustworthy.\nDeliver the script scene by scene.",
+    "is_json": false
+  },
+  {
+    "id": 21,
+    "title": "Guion Cinematográfico",
+    "chapter": 3,
+    "chapter_title": "Escritura de Guiones",
+    "purpose": "Crear guiones con narrativa cinematográfica para comerciales premium y videos emocionales.",
+    "variables": [],
+    "prompt": "Act as an award-winning film director and cinematic screenwriter.\nCreate a cinematic commercial script.\nProduct: [PRODUCT]\nVisual Style: [STYLE]\nEmotion: [EMOTION]\nDuration: [DURATION]\nFor every scene include:\n- Scene Description\n- Camera Composition\n- Camera Movement\n- Lighting\n- Character Action\n- Atmosphere\n- Dialogue or Voiceover\nThe script should feel like a luxury brand commercial.",
+    "is_json": false
+  },
+  {
+    "id": 22,
+    "title": "Guion Documental",
+    "chapter": 3,
+    "chapter_title": "Escritura de Guiones",
+    "purpose": "Crear narrativas documentales para marcas, empresas o contenido educativo.",
+    "variables": [],
+    "prompt": "Act as a documentary filmmaker. Create a documentary-style script.\nTopic: [TOPIC]\nAudience: [TARGET AUDIENCE]\nDuration: [DURATION]\nInclude:\n- Opening Hook\n- Narration\n- Supporting Scenes\n- Emotional Arc\n- Closing Message\nWrite scene by scene.",
+    "is_json": false
+  },
+  {
+    "id": 23,
+    "title": "Guion de Lujo",
+    "chapter": 3,
+    "chapter_title": "Escritura de Guiones",
+    "purpose": "Crear anuncios para marcas premium.",
+    "variables": [],
+    "prompt": "Act as the Creative Director of a luxury advertising agency.\nCreate a premium commercial script.\nBrand: [BRAND]\nProduct: [PRODUCT]\nAudience: [TARGET AUDIENCE]\nStyle:\nLuxury\nElegant\nMinimalist\nSophisticated\nUse subtle storytelling.\nFocus on aspiration, exclusivity and elegance.\nDeliver the script scene by scene.",
+    "is_json": false
+  },
+  {
+    "id": 24,
+    "title": "Guion Educativo",
+    "chapter": 3,
+    "chapter_title": "Escritura de Guiones",
+    "purpose": "Crear contenido educativo para redes sociales.",
+    "variables": [],
+    "prompt": "Act as an educational content creator.\nWrite an engaging educational video script.\nTopic: [TOPIC]\nAudience: [TARGET AUDIENCE]\nDuration: [DURATION]\nStructure:\nHook\nExplanation\nExample\nKey Takeaway\nCTA\nOptimize for audience retention.",
+    "is_json": false
+  },
+  {
+    "id": 25,
+    "title": "Guion para Reel",
+    "chapter": 3,
+    "chapter_title": "Escritura de Guiones",
+    "purpose": "Crear guiones rápidos para Instagram Reels.",
+    "variables": [],
+    "prompt": "Act as a short-form content strategist.\nCreate a high-retention Instagram Reel script.\nTopic: [TOPIC]\nDuration: [DURATION]\nInclude:\n- Hook\n- Main Message\n- Value\n- CTA\nKeep every sentence short and impactful.",
+    "is_json": false
+  },
+  {
+    "id": 26,
+    "title": "Guion para TikTok",
+    "chapter": 3,
+    "chapter_title": "Escritura de Guiones",
+    "purpose": "Crear contenido optimizado para TikTok.",
+    "variables": [],
+    "prompt": "Act as a TikTok content strategist.\nCreate a viral TikTok script.\nTopic: [TOPIC]\nAudience: [TARGET AUDIENCE]\nStructure:\nHook\nCuriosity\nMain Content\nUnexpected Twist\nCTA\nOptimize for audience retention.",
+    "is_json": false
+  },
+  {
+    "id": 27,
+    "title": "Guion para YouTube Shorts",
+    "chapter": 3,
+    "chapter_title": "Escritura de Guiones",
+    "purpose": "Crear guiones adaptados al algoritmo de YouTube Shorts.",
+    "variables": [],
+    "prompt": "Act as a YouTube Shorts strategist.\nWrite a YouTube Shorts script.\nTopic: [TOPIC]\nDuration: [DURATION]\nInclude:\nHook\nEducational Value\nCuriosity\nFinal Insight\nCTA\nMake every second count.",
+    "is_json": false
+  },
+  {
+    "id": 28,
+    "title": "Guion para Video de Ventas (VSL)",
+    "chapter": 3,
+    "chapter_title": "Escritura de Guiones",
+    "purpose": "Crear Video Sales Letters para vender productos o servicios.",
+    "variables": [],
+    "prompt": "Act as a world-class direct response copywriter.\nCreate a persuasive Video Sales Letter script.\nProduct: [PRODUCT]\nAudience: [TARGET AUDIENCE]\nInclude:\n- Powerful Hook\n- Problem\n- Agitation\n- Solution\n- Social Proof\n- Offer\n- Bonuses\n- Urgency\n- Guarantee\n- CTA\nWrite scene by scene with persuasive language.\nCAPÍTULO 4\nStoryboards",
+    "is_json": false
+  },
+  {
+    "id": 29,
+    "title": "Generador de Storyboard",
+    "chapter": 4,
+    "chapter_title": "Storyboards",
+    "purpose": "Convierte un guion en un storyboard profesional, organizando la historia en escenas claramente definidas. Este prompt es ideal antes de comenzar la generación de imágenes con IA.",
+    "variables": [
+      "[SCRIPT] → Guion completo que se convertirá en storyboard. (Lo generado con el prompt de guiones y puedes cargarlo como un Word o PDF. Para obtenerlo, puedes pedirle que te entregue el guión en PDF o Word luego de haberlo generado)"
+    ],
+    "prompt": "Act as a professional film director and storyboard artist.\nConvert the following script into a detailed production storyboard.\nScript: [SCRIPT]\nFor each scene provide:\n- Scene Number\n- Scene Title\n- Scene Duration\n- Visual Description\n- Camera Shot\n- Camera Angle\n- Camera Movement\n- Character Action\n- Environment\n- Emotional Objective\n- Lighting Style\nPresent the storyboard in a structured table that can be used directly for AI image generation.",
+    "is_json": false
+  },
+  {
+    "id": 30,
+    "title": "Desglose de Escenas",
+    "chapter": 4,
+    "chapter_title": "Storyboards",
+    "purpose": "Dividir un guion en escenas independientes, facilitando la producción de imágenes y videos con IA.",
+    "variables": [
+      "[SCRIPT] → Guion completo. (Lo generado con el prompt de guiones y puedes cargarlo como un Word o PDF. Para obtenerlo, puedes pedirle que te entregue el guión en PDF o Word luego de haberlo generado)"
+    ],
+    "prompt": "Act as a film production assistant.\nAnalyze the following script and divide it into individual production scenes.\nScript: [SCRIPT]\nFor each scene identify:\n- Scene Number\n- Scene Objective\n- Main Subject\n- Location\n- Time of Day\n- Props\n- Wardrobe\n- Mood\n- Transition to the Next Scene\nKeep the descriptions concise and production-ready.",
+    "is_json": false
+  },
+  {
+    "id": 31,
+    "title": "Lista de Planos (Shot List)",
+    "chapter": 4,
+    "chapter_title": "Storyboards",
+    "purpose": "Generar una lista técnica de planos para facilitar la producción de imágenes y videos con IA.",
+    "variables": [
+      "[SCRIPT] → Guion del proyecto. (Lo generado con el prompt de guiones y puedes cargarlo como un Word o PDF. Para obtenerlo, puedes pedirle que te entregue el guión en PDF o Word luego de haberlo generado)"
+    ],
+    "prompt": "Act as a professional cinematographer.\nCreate a complete shot list for the following script.\nScript: [SCRIPT]\nFor each shot include:\n- Shot Number\n- Shot Type\n- Camera Angle\n- Camera Movement\n- Lens Recommendation\n- Framing\n- Subject\n- Purpose of the Shot\nOrganize the shots in production order.",
+    "is_json": false
+  },
+  {
+    "id": 32,
+    "title": "Prompts Visuales por Escena",
+    "chapter": 4,
+    "chapter_title": "Storyboards",
+    "purpose": "Transformar cada escena del storyboard en un prompt optimizado para generar imágenes con IA.",
+    "variables": [
+      "[STORYBOARD] → Storyboard generado previamente. (Lo generado con el prompt de storyboard y puedes cargarlo como un Word o PDF. Para obtenerlo, puedes pedirle que te entregue el storyboard en PDF o Word luego de haberlo generado)"
+    ],
+    "prompt": "Act as a senior AI Prompt Engineer specialized in cinematic image generation.\nBased on the following storyboard: [STORYBOARD]\nGenerate one highly detailed AI image prompt for each scene.\nEach prompt should include:\n- Subject\n- Environment\n- Composition\n- Camera Angle\n- Lens\n- Lighting\n- Mood\n- Color Palette\n- Cinematic Style\n- Level of Detail\nThe prompts must be optimized for photorealistic AI image generation and maintain visual consistency across all scenes.",
+    "is_json": false
+  },
+  {
+    "id": 33,
+    "title": "Storyboard Cinematográfico",
+    "chapter": 4,
+    "chapter_title": "Storyboards",
+    "purpose": "Crear un storyboard con un enfoque cinematográfico, pensado para comerciales premium y producciones de alta calidad.",
+    "variables": [
+      "[SCRIPT] → Guion del proyecto. (Lo generado con el prompt de guiones y puedes cargarlo como un Word o PDF. Para obtenerlo, puedes pedirle que te entregue el guión en PDF o Word luego de haberlo generado)"
+    ],
+    "prompt": "Act as an award-winning film director and storyboard supervisor.\nCreate a cinematic storyboard for the following commercial.\nScript: [SCRIPT]\nFor every scene include:\n- Cinematic Composition\n- Camera Movement\n- Lighting Design\n- Emotional Tone\n- Character Position\n- Visual Style\n- Color Palette\n- Scene Transition\nThe storyboard should resemble a luxury commercial production.",
+    "is_json": false
+  },
+  {
+    "id": 34,
+    "title": "Storyboard Maestro para Producción con IA",
+    "chapter": 4,
+    "chapter_title": "Storyboards",
+    "purpose": "Crear un storyboard completo y optimizado para un flujo de trabajo con Inteligencia Artificial, integrando todos los elementos necesarios para generar imágenes y videos consistentes.",
+    "variables": [
+      "[SCRIPT] → Guion completo. (Lo generado con el prompt de guiones y puedes cargarlo como un Word o PDF. Para obtenerlo, puedes pedirle que te entregue el guión en PDF o Word luego de haberlo generado)"
+    ],
+    "prompt": "Act as a Creative Director and AI Production Supervisor.\nUsing the following script: [SCRIPT]\nCreate a complete AI production storyboard.\nFor each scene provide:\n- Scene Number\n- Scene Objective\n- Visual Description\n- Character Description\n- Environment\n- Camera Composition\n- Camera Movement\n- Lens Recommendation\n- Lighting Setup\n- Mood\n- Color Palette\n- AI Image Prompt\n- AI Video Prompt\nEnsure visual consistency between every scene and maintain the same character identity, wardrobe, product, environment, and artistic style throughout the entire production.\nCAPÍTULO 5\nConsistencia de Personajes",
+    "is_json": false
+  },
+  {
+    "id": 35,
+    "title": "Character Sheet (Ficha Maestra del Personaje)",
+    "chapter": 5,
+    "chapter_title": "Consistencia de Personajes",
+    "purpose": "Crear la ficha maestra de un personaje. Este prompt será la base para mantener una apariencia consistente durante toda la producción de imágenes y videos.",
+    "variables": [
+      "[CHARACTER NAME]",
+      "[AGE]",
+      "[ETHNICITY]",
+      "[DESCRIPTION]",
+      "[WARDROBE]"
+    ],
+    "prompt": "Act as a senior character designer and AI visual development artist. Create a master character reference sheet for the following character.\nCharacter Name: [CHARACTER NAME]\nAge: [AGE]\nGender: [GENDER]\nEthnicity: [ETHNICITY]\nPhysical Appearance: [DESCRIPTION]\nHairstyle: [HAIRSTYLE]\nEye Color: [EYE COLOR]\nBody Type: [BODY TYPE]\nWardrobe Style: [WARDROBE]\nAccessories: [ACCESSORIES]\nExpression: [DEFAULT EXPRESSION]\nGenerate a highly detailed front-facing studio character sheet.\nRequirements:\n- White seamless background\n- Neutral pose\n- Full body\n- Front view\n- Consistent proportions\n- Natural lighting\n- Ultra photorealistic\n- Commercial quality\n- Maximum facial detail\nThis image will serve as the master reference for all future AI-generated scenes.",
+    "is_json": false
+  },
+  {
+    "id": 36,
+    "title": "Character Lock",
+    "chapter": 5,
+    "chapter_title": "Consistencia de Personajes",
+    "purpose": "Bloquear la identidad visual del personaje para evitar que cambie entre imágenes.",
+    "variables": [],
+    "prompt": "Use the uploaded character reference image as the definitive identity.\nMaintain exactly the same:\n- Face\n- Facial proportions\n- Skin tone\n- Hair\n- Hairstyle\n- Eye color\n- Body proportions\n- Age\n- Ethnicity\n- Identity\nDo not modify or reinterpret the character.\nOnly change the environment, clothing, pose, facial expression or action when explicitly requested.\nCharacter consistency is the highest priority.",
+    "is_json": false
+  },
+  {
+    "id": 37,
+    "title": "Cambio de Vestuario",
+    "chapter": 5,
+    "chapter_title": "Consistencia de Personajes",
+    "purpose": "Cambiar únicamente la ropa del personaje sin modificar su identidad.",
+    "variables": [
+      "[NEW OUTFIT]"
+    ],
+    "prompt": "Use the uploaded character reference as the definitive identity.\nKeep exactly the same:\n- Face\n- Hairstyle\n- Skin tone\n- Body proportions\n- Identity\nOnly replace the outfit with: [NEW OUTFIT]\nMaintain the same level of realism, lighting and character consistency.\nDo not alter facial features or body shape.",
+    "is_json": false
+  },
+  {
+    "id": 38,
+    "title": "Cambio de Expresión y Pose",
+    "chapter": 5,
+    "chapter_title": "Consistencia de Personajes",
+    "purpose": "Modificar únicamente la expresión facial y la postura del personaje.",
+    "variables": [
+      "[EXPRESSION]",
+      "[POSE]"
+    ],
+    "prompt": "Use the uploaded character reference as the definitive identity.\nMaintain:\n- Face\n- Hair\n- Identity\n- Clothing\nOnly modify:\nExpression: [EXPRESSION]\nPose: [POSE]\nEnsure natural body language and realistic facial expressions.\nDo not modify any other aspect of the character.",
+    "is_json": false
+  },
+  {
+    "id": 39,
+    "title": "Personaje en Nuevos Escenarios",
+    "chapter": 5,
+    "chapter_title": "Consistencia de Personajes",
+    "purpose": "Ubicar al mismo personaje en diferentes escenarios sin perder consistencia.",
+    "variables": [
+      "[LOCATION]",
+      "[ACTION]"
+    ],
+    "prompt": "Use the uploaded character reference as the definitive identity.\nMaintain complete facial and body consistency.\nPlace the character in: [LOCATION]\nThe character is performing: [ACTION]\nMaintain:\n- Identity\n- Body proportions\n- Face\n- Hair\n- Clothing\nAdapt only the environment and lighting.\nCreate a cinematic, ultra-photorealistic scene with professional composition.",
+    "is_json": false
+  },
+  {
+    "id": 40,
+    "title": "Hoja Completa de Consistencia del Personaje",
+    "chapter": 5,
+    "chapter_title": "Consistencia de Personajes",
+    "purpose": "Generar una ficha técnica completa que pueda utilizarse durante todo un proyecto audiovisual para mantener la coherencia del personaje.",
+    "variables": [
+      "[CHARACTER DESCRIPTION]"
+    ],
+    "prompt": "Act as a senior AI character supervisor.\nCreate a complete character consistency sheet.\nCharacter: [CHARACTER DESCRIPTION]\nGenerate the following sections:\n- Physical Description\n- Face Description\n- Hair Description\n- Skin Tone\n- Body Type\n- Height\n- Clothing Style\n- Accessories\n- Personality Traits\n- Typical Facial Expressions\n- Color Palette\n- Lighting Recommendations\n- Camera Recommendations\n- Negative Prompt Suggestions\n- Consistency Rules\nThe document should serve as the official visual guide for maintaining character consistency throughout an AI production.\nCAPÍTULO 6\nConsistencia de Productos",
+    "is_json": false
+  },
+  {
+    "id": 41,
+    "title": "Product Sheet (Ficha Maestra del Producto)",
+    "chapter": 6,
+    "chapter_title": "Consistencia de Productos",
+    "purpose": "Crear la ficha maestra de un producto que servirá como referencia oficial para todas las imágenes y videos del proyecto, garantizando consistencia visual durante toda la producción.",
+    "variables": [
+      "[PRODUCT NAME]",
+      "[CATEGORY]",
+      "[DIMENSIONS]",
+      "[MATERIALS]",
+      "[PRIMARY COLORS]",
+      "[SECONDARY COLORS]",
+      "[FINISH]",
+      "[LOGO DESCRIPTION]",
+      "[SPECIAL FEATURES]"
+    ],
+    "prompt": "Act as a senior product designer and commercial product visualization specialist. Create a master product reference sheet for the following product.\nProduct Name: [PRODUCT NAME]\nCategory: [CATEGORY]\nDimensions: [DIMENSIONS]\nMaterials: [MATERIALS]\nPrimary Colors: [PRIMARY COLORS]\nSecondary Colors: [SECONDARY COLORS]\nFinish: [FINISH]\nBrand Logo: [LOGO DESCRIPTION]\nSpecial Features: [SPECIAL FEATURES]\nGenerate a professional studio reference sheet.\nRequirements:\n- White seamless background\n- Front view\n- Side view\n- Rear view\n- Top view\n- Bottom view\n- 45-degree perspective view\n- Ultra photorealistic\n- Commercial studio lighting\n- High detail\n- Neutral shadows\n- Maximum texture accuracy\nThis image will serve as the official product reference for all future AI-generated content.",
+    "is_json": false
+  },
+  {
+    "id": 42,
+    "title": "Product Lock",
+    "chapter": 6,
+    "chapter_title": "Consistencia de Productos",
+    "purpose": "Bloquear la identidad visual del producto para evitar cambios involuntarios en su forma, materiales o detalles durante la generación de nuevas imágenes.",
+    "variables": [],
+    "prompt": "Use the uploaded product reference image as the definitive master reference.\nMaintain exactly the same:\n- Shape\n- Dimensions\n- Materials\n- Colors\n- Surface finish\n- Logo placement\n- Labels\n- Textures\n- Proportions\n- Branding\nDo not redesign, reinterpret or modify the product.\nOnly change the environment, lighting, camera angle or composition when explicitly requested.\nProduct consistency is the highest priority.",
+    "is_json": false
+  },
+  {
+    "id": 43,
+    "title": "Cambio de Color del Producto",
+    "chapter": 6,
+    "chapter_title": "Consistencia de Productos",
+    "purpose": "Modificar únicamente el color del producto sin alterar ninguna otra característica física.",
+    "variables": [
+      "[NEW COLOR]"
+    ],
+    "prompt": "Use the uploaded product reference as the definitive master reference.\nMaintain exactly the same:\n- Shape\n- Dimensions\n- Materials\n- Branding\n- Labels\n- Finish\n- Details\nOnly replace the primary color with: [NEW COLOR]\nKeep every other element identical.\nMaintain photorealistic quality and studio lighting.",
+    "is_json": false
+  },
+  {
+    "id": 44,
+    "title": "Cambio de Material o Acabado",
+    "chapter": 6,
+    "chapter_title": "Consistencia de Productos",
+    "purpose": "Cambiar el material o el acabado superficial del producto conservando su diseño original.",
+    "variables": [
+      "[NEW MATERIAL]"
+    ],
+    "prompt": "Use the uploaded product reference as the definitive master reference.\nMaintain:\n- Shape\n- Dimensions\n- Logo\n- Colors\n- Branding\nOnly replace the material or surface finish with: [NEW MATERIAL]\nExamples:\n- Brushed aluminum\n- Matte plastic\n- Frosted glass\n- Walnut wood\n- Carbon fiber\n- Polished stainless steel\n- Glossy ceramic\nMaintain commercial product photography quality.",
+    "is_json": false
+  },
+  {
+    "id": 45,
+    "title": "Producto en Nuevos Escenarios",
+    "chapter": 6,
+    "chapter_title": "Consistencia de Productos",
+    "purpose": "Colocar el mismo producto en diferentes ambientes publicitarios sin perder consistencia visual.",
+    "variables": [
+      "[LOCATION]",
+      "[STYLE]",
+      "[LIGHTING]",
+      "[ANGLE]"
+    ],
+    "prompt": "Use the uploaded product reference as the definitive product identity.\nMaintain complete consistency.\nPlace the product in: [LOCATION]\nScene Style: [STYLE]\nLighting: [LIGHTING]\nCamera Angle: [ANGLE]\nMaintain:\n- Shape\n- Materials\n- Colors\n- Branding\n- Labels\n- Textures\n- Scale\nOnly modify the environment and composition.\nCreate an ultra-photorealistic commercial advertising scene.",
+    "is_json": false
+  },
+  {
+    "id": 46,
+    "title": "Hoja Maestra de Consistencia del Producto",
+    "chapter": 6,
+    "chapter_title": "Consistencia de Productos",
+    "purpose": "Generar una ficha técnica completa que documente todas las características visuales del producto y sirva como guía oficial durante proyectos largos o campañas con múltiples piezas.",
+    "variables": [
+      "[PRODUCT DESCRIPTION]"
+    ],
+    "prompt": "Act as a senior commercial product art director.\nCreate a complete product consistency guide.\nProduct: [PRODUCT DESCRIPTION]\nGenerate the following sections:\n- Product Overview\n- Dimensions\n- Shape Description\n- Material Specifications\n- Surface Finish\n- Color Palette\n- Branding Guidelines\n- Logo Placement\n- Texture Description\n- Reflection Properties\n- Lighting Recommendations\n- Camera Recommendations\n- Background Recommendations\n- Negative Prompt Suggestions\n- Product Consistency Rules\nThe document should serve as the official visual production guide for maintaining perfect product consistency across AI-generated images and videos.\nCAPÍTULO 7\nGeneración de Imágenes",
+    "is_json": false
+  },
+  {
+    "id": 47,
+    "title": "Prompt Maestro para Generación de Imágenes",
+    "chapter": 7,
+    "chapter_title": "Generación de Imágenes",
+    "purpose": "Generar prompts completos y profesionales para crear imágenes de alta calidad con cualquier modelo de Inteligencia Artificial como ChatGPT Images, Midjourney, Flux, Ideogram o Freepik AI.",
+    "variables": [
+      "[SUBJECT]",
+      "[OBJECTIVE]",
+      "[STYLE]",
+      "[ENVIRONMENT]",
+      "[MOOD]",
+      "[ASPECT RATIO]"
+    ],
+    "prompt": "Act as a world-class AI Prompt Engineer, Creative Director, and Commercial Photographer. Generate a highly detailed AI image prompt for the following project.\nSubject: [SUBJECT]\nObjective: [OBJECTIVE]\nVisual Style: [STYLE]\nEnvironment: [ENVIRONMENT]\nMood: [MOOD]\nAspect Ratio: [ASPECT RATIO]\nThe prompt must include:\n- Main Subject\n- Environment\n- Composition\n- Camera Angle\n- Lens\n- Depth of Field\n- Lighting\n- Color Palette\n- Texture Details\n- Atmosphere\n- Artistic Direction\n- Photorealistic Quality\n- Ultra High Detail\n- Commercial Advertising Style\nThe prompt should be optimized for state-of-the-art AI image generation models.",
+    "is_json": false
+  },
+  {
+    "id": 48,
+    "title": "Imagen Publicitaria",
+    "chapter": 7,
+    "chapter_title": "Generación de Imágenes",
+    "purpose": "Crear imágenes publicitarias de alto impacto enfocadas en comunicar el valor de un producto, servicio o marca.",
+    "variables": [
+      "[PRODUCT]",
+      "[TARGET AUDIENCE]",
+      "[OBJECTIVE]",
+      "[STYLE]"
+    ],
+    "prompt": "Act as an award-winning advertising photographer and creative director.\nCreate a premium commercial advertising image.\nProduct or Service: [PRODUCT]\nTarget Audience: [TARGET AUDIENCE]\nCampaign Objective: [OBJECTIVE]\nVisual Style: [STYLE]\nThe image should include:\n- Hero Composition\n- Professional Product Placement\n- Dramatic Lighting\n- Cinematic Atmosphere\n- Luxury Color Grading\n- Premium Advertising Quality\n- Magazine-Level Photography\n- Ultra Photorealistic Details\nCreate an image that immediately captures attention and communicates premium value.",
+    "is_json": false
+  },
+  {
+    "id": 49,
+    "title": "Imagen Lifestyle",
+    "chapter": 7,
+    "chapter_title": "Generación de Imágenes",
+    "purpose": "Mostrar un producto o servicio en un contexto cotidiano para conectar emocionalmente con el público objetivo.",
+    "variables": [
+      "[PRODUCT]",
+      "[TARGET AUDIENCE]",
+      "[ENVIRONMENT]"
+    ],
+    "prompt": "Act as a lifestyle advertising photographer.\nCreate a lifestyle image for:\nProduct: [PRODUCT]\nTarget Audience: [TARGET AUDIENCE]\nEnvironment: [ENVIRONMENT]\nThe image should feel authentic, natural and aspirational.\nInclude:\n- Realistic Human Interaction\n- Natural Lighting\n- Emotional Connection\n- Cinematic Composition\n- Commercial Photography Quality\n- Premium Color Grading\nThe final image should inspire the audience to imagine themselves using the product.",
+    "is_json": false
+  },
+  {
+    "id": 50,
+    "title": "Imagen Editorial",
+    "chapter": 7,
+    "chapter_title": "Generación de Imágenes",
+    "purpose": "Crear imágenes con estética de revista, ideales para campañas de moda, branding personal o publicaciones premium.",
+    "variables": [
+      "[SUBJECT]",
+      "[MAGAZINE STYLE]",
+      "[MOOD]"
+    ],
+    "prompt": "Act as a fashion magazine creative director. Create an editorial-quality image.\nSubject: [SUBJECT]\nMagazine Style: [VOGUE / GQ / ELLE / HARPER'S BAZAAR]\nMood: [MOOD]\nInclude:\n- Editorial Composition\n- Professional Studio Lighting\n- Luxury Styling\n- High Fashion Photography\n- Dramatic Color Grading\n- Cinematic Detail\n- Magazine Cover Quality\nProduce a timeless editorial photograph.",
+    "is_json": false
+  },
+  {
+    "id": 51,
+    "title": "Imagen Cinematográfica",
+    "chapter": 7,
+    "chapter_title": "Generación de Imágenes",
+    "purpose": "Generar imágenes con apariencia de una escena de película o comercial cinematográfico.",
+    "variables": [
+      "[SUBJECT]",
+      "[LOCATION]",
+      "[EMOTION]",
+      "[STYLE]"
+    ],
+    "prompt": "Act as an Oscar-winning cinematographer. Create a cinematic image.\nSubject: [SUBJECT]\nLocation: [LOCATION]\nEmotion: [EMOTION]\nVisual Style: [STYLE]\nInclude:\n- Cinematic Composition\n- Dynamic Lighting\n- Volumetric Light\n- Professional Camera Angle\n- Film Color Grading\n- Ultra Realistic Skin and Materials\n- Atmospheric Depth\n- IMAX-Level Detail\nThe image should look like a frame extracted from a Hollywood film.",
+    "is_json": false
+  },
+  {
+    "id": 52,
+    "title": "Imagen para Redes Sociales",
+    "chapter": 7,
+    "chapter_title": "Generación de Imágenes",
+    "purpose": "Crear imágenes optimizadas para captar la atención en plataformas como Instagram, Facebook, LinkedIn o TikTok.",
+    "variables": [
+      "[TOPIC]",
+      "[PLATFORM]",
+      "[TARGET AUDIENCE]"
+    ],
+    "prompt": "Act as a social media creative strategist. Generate a scroll-stopping image.\nTopic: [TOPIC]\nPlatform: [PLATFORM]\nTarget Audience: [TARGET AUDIENCE]\nRequirements:\n- Eye-catching Composition\n- Vibrant Colors\n- Strong Visual Hierarchy\n- High Contrast\n- Clean Design\n- Emotional Appeal\n- Professional Advertising Quality\nOptimize the image for maximum engagement.",
+    "is_json": false
+  },
+  {
+    "id": 53,
+    "title": "Imagen Ultra Realista",
+    "chapter": 7,
+    "chapter_title": "Generación de Imágenes",
+    "purpose": "Crear imágenes con el máximo nivel de realismo posible, ideales para publicidad, catálogos y presentaciones de alto nivel.",
+    "variables": [
+      "[SUBJECT]"
+    ],
+    "prompt": "Act as a commercial CGI artist and hyper realistic photographer. Generate an ultra-photorealistic image.\nSubject: [SUBJECT]\nRequirements:\n- Physically Accurate Lighting\n- Hyperrealistic Textures\n- Natural Reflections\n- Realistic Shadows\n- High Dynamic Range\n- Extreme Detail\n- 8K Commercial Photography Quality\n- Studio-Level Sharpness\nThe image should be visually indistinguishable from a real professional photograph.",
+    "is_json": false
+  },
+  {
+    "id": 54,
+    "title": "Imagen Conceptual",
+    "chapter": 7,
+    "chapter_title": "Generación de Imágenes",
+    "purpose": "Representar ideas abstractas mediante metáforas visuales impactantes, ideales para campañas de branding, storytelling o comunicación corporativa.",
+    "variables": [
+      "[CONCEPT]",
+      "[TARGET AUDIENCE]",
+      "[EMOTION]"
+    ],
+    "prompt": "Act as an award-winning conceptual artist and advertising creative director. Create a conceptual visual that represents the following idea.\nConcept: [CONCEPT]\nAudience: [TARGET AUDIENCE]\nDesired Emotion: [EMOTION]\nDevelop an original visual metaphor using:\n- Symbolism\n- Composition\n- Lighting\n- Color Psychology\n- Cinematic Atmosphere\n- Visual Storytelling\n- Premium Advertising Quality\nThe image should communicate the concept instantly without relying on text.",
+    "is_json": false
+  },
+  {
+    "id": 55,
+    "title": "Fotografía Comercial de Producto",
+    "chapter": 8,
+    "chapter_title": "Fotografía de Producto",
+    "purpose": "Para crear una fotografía de producto limpia y profesional, ideal para catálogos, tiendas online, marketplaces, páginas web y piezas publicitarias.",
+    "variables": [
+      "[PRODUCT] → nombre del producto",
+      "[REFERENCE IMAGE OR PRODUCT DESCRIPTION] → imagen de referencia o descripción",
+      "[COMPOSITION] → frontal, 45°, close-up, etc.",
+      "[BACKGROUND] → blanco, gris, negro, etc.",
+      "[LIGHTING] → softbox, rim light, dramatic lighting, etc.",
+      "[CAMERA ANGLE] → frontal, overhead, low angle, etc."
+    ],
+    "prompt": "Act as a senior commercial product photographer and art director. Create a professional commercial product photograph of: [PRODUCT]\nProduct Reference: [REFERENCE IMAGE OR PRODUCT DESCRIPTION]\nComposition: [C O M P O S I T I O N]\nBackground: [BACKGROUND]\nLighting: [LIGHTING]\nCamera Angle: [CAMERA ANGLE]\nThe product must remain completely faithful to its original design, proportions, materials, colors, branding and details.\nUse professional studio photography techniques, realistic shadows, accurate reflections, controlled highlights, sharp product details and premium commercial styling.\nThe final image should look like a professionally photographed product for a high-end commercial catalog.",
+    "is_json": false
+  },
+  {
+    "id": 56,
+    "title": "Fotografía Premium / Luxury Product",
+    "chapter": 8,
+    "chapter_title": "Fotografía de Producto",
+    "purpose": "Para transformar un producto común en una imagen visualmente aspiracional, utilizando códigos de publicidad de lujo.",
+    "variables": [
+      "[PRODUCT]",
+      "[BRAND POSITIONING]",
+      "[VISUAL CONCEPT]",
+      "[ENVIRONMENT]",
+      "[LIGHTING]",
+      "[COLOR PALETTE]"
+    ],
+    "prompt": "Act as a luxury advertising photographer and creative director. Create a high-end luxury product photograph of: [PRODUCT]\nBrand Positioning: [BRAND POSITIONING]\nVisual Concept: [VISUAL CONCEPT]\nEnvironment: [ENVIRONMENT]\nLighting: [LIGHTING]\nColor Palette: [COLOR PALETTE]\nCreate an elegant, sophisticated and visually restrained composition.\nUse cinematic studio lighting, subtle reflections, controlled highlights, realistic materials, refined shadows, premium textures and sophisticated art direction.\nThe product must remain completely accurate to the reference image.\nThe final image should look like a luxury advertising campaign for a world-class premium brand.",
+    "is_json": false
+  },
+  {
+    "id": 57,
+    "title": "Fotografía Lifestyle de Producto",
+    "chapter": 8,
+    "chapter_title": "Fotografía de Producto",
+    "purpose": "Para mostrar el producto en uso, dentro de un contexto aspiracional y relacionado con el estilo de vida del consumidor.",
+    "variables": [
+      "[PRODUCT]",
+      "[TARGET CONSUMER]",
+      "[ENVIRONMENT]",
+      "[ACTIVITY]",
+      "[TIME OF DAY]",
+      "[MOOD]"
+    ],
+    "prompt": "Act as a professional lifestyle advertising photographer.\nCreate a realistic lifestyle photograph featuring:\nProduct: [PRODUCT]\nTarget Consumer: [TARGET CONSUMER]\nEnvironment: [ENVIRONMENT]\nActivity: [ACTIVITY]\nTime of Day: [TIME OF DAY]\nMood: [MOOD]\nShow the product naturally integrated into the environment.\nThe product must remain visually consistent with the reference image, including its shape, proportions, colors, materials, branding and details.\nUse natural lighting, authentic human interaction, realistic depth of field and cinematic commercial composition.\nThe final image should feel aspirational, believable and emotionally engaging.",
+    "is_json": false
+  },
+  {
+    "id": 58,
+    "title": "Fotografía de Producto con Modelo",
+    "chapter": 8,
+    "chapter_title": "Fotografía de Producto",
+    "purpose": "Para integrar un producto con una persona sin perder la identidad visual del producto ni generar una composición artificial. Ideal para cosméticos, ropa, accesorios, alimentos, tecnología y productos de lifestyle.",
+    "variables": [
+      "[PRODUCT]",
+      "[MODEL DESCRIPTION]",
+      "[ACTION]",
+      "[ENVIRONMENT]",
+      "[MOOD]"
+    ],
+    "prompt": "Act as a professional commercial photographer specializing in lifestyle advertising. Create a premium advertising photograph featuring:\nProduct: [PRODUCT]\nModel: [MODEL DESCRIPTION]\nAction: [ACTION]\nEnvironment: [ENVIRONMENT]\nMood: [MOOD]\nThe model should interact naturally with the product.\nMaintain the exact product identity, including:\n- Shape\n- Proportions\n- Materials\n- Colors\n- Branding\n- Labels\n- Textures\n- Packaging details\nUse realistic human anatomy, natural interaction, professional lighting, authentic shadows and cinematic depth of field.\nThe final image should look like a real commercial advertising photograph.",
+    "is_json": false
+  },
+  {
+    "id": 59,
+    "title": "Fotografía de Alimentos / Gastronomía",
+    "chapter": 8,
+    "chapter_title": "Fotografía de Producto",
+    "purpose": "Para crear fotografías gastronómicas profesionales para restaurantes, marcas de alimentos, delivery, menús y redes sociales.",
+    "variables": [
+      "[DISH]",
+      "[CUISINE]",
+      "[PRESENTATION STYLE]",
+      "[SURFACE]",
+      "[BACKGROUND]",
+      "[LIGHTING]",
+      "[CAMERA ANGLE]"
+    ],
+    "prompt": "Act as a world-class food photographer and culinary art director.\nCreate an appetizing commercial food photograph of: [DISH]\nCuisine: [CUISINE]\nPresentation Style: [PRESENTATION STYLE]\nSurface: [SURFACE]\nBackground: [BACKGROUND]\nLighting: [LIGHTING]\nCamera Angle: [CAMERA ANGLE]\nThe food must look fresh, natural, realistic and highly appetizing.\nEmphasize:\n- Authentic food textures\n- Natural ingredients\n- Realistic moisture\n- Controlled highlights\n- Fine details\n- Professional plating\n- Cinematic depth of field\n- Premium restaurant photography\nCreate a sophisticated commercial food photograph suitable for a high-end restaurant campaign.",
+    "is_json": false
+  },
+  {
+    "id": 60,
+    "title": "Cosméticos y Belleza",
+    "chapter": 8,
+    "chapter_title": "Fotografía de Producto",
+    "purpose": "Para crear fotografías publicitarias de cosméticos, skincare, perfumes, maquillaje y productos de belleza.",
+    "variables": [
+      "[PRODUCT]",
+      "[BRAND STYLE]",
+      "[TARGET AUDIENCE]",
+      "[VISUAL CONCEPT]",
+      "[BACKGROUND]",
+      "[LIGHTING]",
+      "[COLOR PALETTE]"
+    ],
+    "prompt": "Act as a luxury beauty and cosmetics photographer. Create a premium commercial photograph of: [PRODUCT]\nBrand Style: [BRAND STYLE]\nTarget Audience: [TARGET AUDIENCE]\nVisual Concept: [VISUAL CONCEPT]\nBackground: [BACKGROUND]\nLighting: [LIGHTING]\nColor Palette: [COLOR PALETTE]\nCreate an elegant beauty campaign with sophisticated composition, refined reflections, realistic materials, controlled highlights and premium studio lighting.\nPreserve the exact product packaging, proportions, colors, logo placement and branding.\nThe final image should look like a high-end international cosmetics advertising campaign.",
+    "is_json": false
+  },
+  {
+    "id": 61,
+    "title": "Moda y Accesorios",
+    "chapter": 8,
+    "chapter_title": "Fotografía de Producto",
+    "purpose": "Para crear fotografías comerciales de ropa, zapatos, bolsos, relojes, gafas y accesorios.",
+    "variables": [
+      "[PRODUCT]",
+      "[MODEL DESCRIPTION]",
+      "[LOCATION]",
+      "[FASHION STYLE]",
+      "[POSE]",
+      "[MOOD]"
+    ],
+    "prompt": "Act as an award-winning fashion photographer and creative director.\nCreate a premium fashion advertising photograph featuring:\nProduct: [PRODUCT]\nModel: [MODEL DESCRIPTION]\nLocation: [LOCATION]\nFashion Style: [FASHION STYLE]\nPose: [POSE]\nMood: [MOOD]\nCreate a sophisticated editorial composition with professional fashion lighting, realistic textures, natural human anatomy, cinematic depth of field and premium color grading.\nThe product must remain faithful to the reference image, including its design, materials, colors, proportions and branding.\nThe final image should look like a professional international fashion campaign.",
+    "is_json": false
+  },
+  {
+    "id": 62,
+    "title": "Fotografía de Producto con Concepto Creativo",
+    "chapter": 8,
+    "chapter_title": "Fotografía de Producto",
+    "purpose": "Este es uno de los más importantes del capítulo. Permite dejar de pensar únicamente en \"fotografiar el producto\" y comenzar a construir una idea publicitaria alrededor del producto.",
+    "variables": [
+      "[CREATIVE CONCEPT]",
+      "[PRODUCT]",
+      "[TARGET AUDIENCE]",
+      "[CORE MESSAGE]",
+      "[EMOTION]",
+      "[ENVIRONMENT]",
+      "[VISUAL METAPHOR"
+    ],
+    "prompt": "Act as an award-winning advertising creative director and commercial photographer.\nCreate a visually striking advertising photograph based on this concept: [CREATIVE CONCEPT]\nProduct: [PRODUCT]\nTarget Audience: [TARGET AUDIENCE]\nCore Message: [CORE MESSAGE]\nDesired Emotion: [EMOTION]\nEnvironment: [ENVIRONMENT]\nVisual Metaphor: [VISUAL METAPHOR]\nThe product must remain completely faithful to the reference image.\nUse visual storytelling, symbolism, cinematic lighting, strong composition, realistic materials, controlled depth of field and premium advertising aesthetics.\nThe image must communicate the core message visually without relying on written text.\nCreate an original, memorable and commercially powerful advertising image.",
+    "is_json": false
+  },
+  {
+    "id": 63,
+    "title": "Prompt Maestro de Video",
+    "chapter": 9,
+    "chapter_title": "GENERACIÓN DE VIDEO",
+    "purpose": "Crear un prompt profesional completo para generar una escena de video a partir de una idea, imagen de referencia o storyboard.",
+    "variables": [
+      "[DURATION]",
+      "[SUBJECT]",
+      "[ACTION]",
+      "[ENVIRONMENT]",
+      "[VISUAL STYLE]",
+      "[MOOD]",
+      "[CAMERA MOVEMENT]",
+      "[LIGHTING]"
+    ],
+    "prompt": "Act as a professional film director, cinematographer and AI video prompt engineer. Create a detailed production prompt for a [DURATION]-second video.\nSubject: [SUBJECT]\nAction: [ACTION]\nEnvironment: [ENVIRONMENT]\nVisual Style: [VISUAL STYLE]\nMood: [MOOD]\nCamera Movement: [CAMERA MOVEMENT]\nLighting: [LIGHTING]\nThe scene must clearly describe:\n- Subject appearance and behavior\n- Physical movement\n- Environmental movement\n- Camera movement\n- Framing\n- Lens characteristics\n- Lighting behavior\n- Depth of field\n- Atmosphere\n- Timing and pacing\n- Cinematic realism\nMaintain strict visual consistency with the provided reference image. The movement must feel physically realistic and natural.\nDo not introduce new characters, objects or visual elements that are not specified.\nCreate a production-ready video prompt optimized for an advanced AI video generation model.",
+    "is_json": false
+  },
+  {
+    "id": 64,
+    "title": "Image to Video",
+    "chapter": 9,
+    "chapter_title": "GENERACIÓN DE VIDEO",
+    "purpose": "Convertir una imagen estática en una escena de video manteniendo la identidad visual original.",
+    "variables": [
+      "[SUBJECT MOVEMENT]",
+      "[ENVIRONMENTAL MOVEMENT]",
+      "[CAMERA MOVEMENT]",
+      "[DURATION]"
+    ],
+    "prompt": "Use the provided image as the primary visual reference.\nAnimate the scene naturally while preserving the exact identity and appearance of all subjects and objects.\nSubject Movement: [SUBJECT MOVEMENT]\nEnvironmental Movement: [ENVIRONMENTAL MOVEMENT]\nCamera Movement: [CAMERA MOVEMENT]\nDuration: [DURATION]\nThe original composition, character identity, product design, colors, proportions, wardrobe and environment must remain consistent.\nUse subtle, physically realistic motion.\nAvoid sudden transformations, unnatural deformation, identity changes, object duplication or unintended movements.\nCreate a cinematic and realistic image-to-video sequence.",
+    "is_json": false
+  },
+  {
+    "id": 65,
+    "title": "Video Publicitario de Producto",
+    "chapter": 9,
+    "chapter_title": "GENERACIÓN DE VIDEO",
+    "purpose": "Crear un comercial de producto donde el movimiento y la cámara estén diseñados para vender visualmente.",
+    "variables": [
+      "[PRODUCT]",
+      "[BRAND]",
+      "[CORE MESSAGE]",
+      "[PRODUCT ACTION]",
+      "[ENVIRONMENT]",
+      "[DURATION]",
+      "[CAMERA MOVEMENT]",
+      "[LIGHTING]"
+    ],
+    "prompt": "Act as an award-winning commercial film director.\nCreate a premium product advertising video.\nProduct: [PRODUCT]\nBrand: [BRAND]\nCore Message: [CORE MESSAGE]\nAction: [PRODUCT ACTION]\nEnvironment: [ENVIRONMENT]\nDuration: [DURATION]\nCamera Movement: [CAMERA MOVEMENT]\nLighting: [LIGHTING]\nThe product must remain completely consistent with the reference image.\nHighlight its:\n- Shape\n- Materials\n- Texture\n- Packaging\n- Branding\n- Functional details\nUse cinematic camera movement, controlled lighting, realistic reflections, elegant transitions and premium advertising aesthetics.\nThe product should remain the visual hero throughout the scene.\nCreate a polished commercial suitable for social media advertising.",
+    "is_json": false
+  },
+  {
+    "id": 66,
+    "title": "Video UGC",
+    "chapter": 9,
+    "chapter_title": "GENERACIÓN DE VIDEO",
+    "purpose": "Crear videos que simulen contenido generado por usuarios, con una apariencia natural y menos publicitaria.",
+    "variables": [
+      "[CHARACTER]",
+      "[PRODUCT]",
+      "[LOCATION]",
+      "[ACTION]",
+      "[EMOTION]",
+      "[DURATION]",
+      "[CAMERA STYLE]"
+    ],
+    "prompt": "Act as a professional UGC video director.\nCreate a natural and authentic vertical UGC video.\nCharacter: [CHARACTER]\nProduct: [PRODUCT]\nLocation: [LOCATION]\nAction: [ACTION]\nEmotion: [EMOTION]\nDuration: [DURATION]\nThe character should behave naturally and realistically.\nUse authentic body language, subtle facial expressions, natural eye movement and realistic interaction with the product.\nCamera: [CAMERA STYLE]\nThe video should feel spontaneous, relatable and believable rather than highly produced.\nMaintain complete consistency of the character and product throughout the sequence.\nAvoid exaggerated acting, artificial movements and unrealistic camera motion.",
+    "is_json": false
+  },
+  {
+    "id": 67,
+    "title": "Video Cinematográfico",
+    "chapter": 9,
+    "chapter_title": "GENERACIÓN DE VIDEO",
+    "purpose": "Crear escenas con una estética cinematográfica, ideal para storytelling, campañas premium y piezas audiovisuales de marca.",
+    "variables": [
+      "[DURATION]",
+      "[SUBJECT]",
+      "[STORY CONTEXT]",
+      "[LOCATION]",
+      "[EMOTION]",
+      "[TIME OF DAY]",
+      "[CAMERA]",
+      "[CAMERA MOVEMENT]",
+      "[LIGHTING]"
+    ],
+    "prompt": "Act as an award-winning film director and cinematographer.\nCreate a cinematic [DURATION]-second scene.\nSubject: [SUBJECT]\nStory Context: [STORY CONTEXT]\nLocation: [LOCATION]\nEmotion: [EMOTION]\nTime of Day: [TIME OF DAY]\nCamera: [CAMERA]\nCamera Movement: [CAMERA MOVEMENT]\nLighting: [LIGHTING]\nCreate cinematic visual storytelling through movement, composition, lighting and atmosphere.\nUse realistic physics, natural character movement, cinematic depth of field, subtle environmental motion and professional film aesthetics.\nThe scene should feel like a carefully directed sequence from a high-budget feature film.",
+    "is_json": false
+  },
+  {
+    "id": 68,
+    "title": "Video Lifestyle",
+    "chapter": 9,
+    "chapter_title": "GENERACIÓN DE VIDEO",
+    "purpose": "Mostrar cómo un producto o servicio forma parte de la vida del consumidor.",
+    "variables": [
+      "[PRODUCT]",
+      "[CHARACTER]",
+      "[ENVIRONMENT]",
+      "[ACTIVITY]",
+      "[EMOTION]",
+      "[DURATION]"
+    ],
+    "prompt": "Act as a lifestyle commercial director.\nCreate a realistic lifestyle video featuring:\nProduct: [PRODUCT]\nCharacter: [CHARACTER]\nEnvironment: [ENVIRONMENT]\nActivity: [ACTIVITY]\nEmotion: [EMOTION]\nDuration: [DURATION]\nThe character interacts naturally with the product.\nInclude subtle environmental movement such as:\n- Hair movement\n- Clothing movement\n- Natural body movement\n- Background activity\n- Light changes\n- Atmospheric motion\nUse realistic camera movement and natural lighting.\nThe scene should feel authentic, aspirational and emotionally engaging.\nAvoid artificial posing or exaggerated movement.",
+    "is_json": false
+  },
+  {
+    "id": 69,
+    "title": "Video de Transformación",
+    "chapter": 9,
+    "chapter_title": "GENERACIÓN DE VIDEO",
+    "purpose": "Representar visualmente un antes → después, ideal para publicidad, belleza, fitness, negocios, productos y servicios.",
+    "variables": [
+      "[DURATION]",
+      "[BEFORE STATE]",
+      "[AFTER STATE]",
+      "[SUBJECT]",
+      "[ENVIRONMENT]",
+      "[TRANSFORMATION]"
+    ],
+    "prompt": "Act as a commercial film director specializing in visual transformation.\nCreate a [DURATION]-second transformation sequence.\nBefore State: [BEFORE STATE]\nAfter State: [AFTER STATE]\nSubject: [SUBJECT]\nEnvironment: [ENVIRONMENT]\nTransformation Mechanism: [TRANSFORMATION]\nThe transformation must happen smoothly and progressively.\nMaintain the subject's identity and visual consistency throughout the entire sequence.\nUse controlled camera movement, realistic lighting transitions, natural physics and seamless visual continuity.\nThe transformation should feel visually satisfying, believable and commercially powerful.\nAvoid sudden morphing, distorted anatomy, duplicated objects or inconsistent details.",
+    "is_json": false
+  },
+  {
+    "id": 70,
+    "title": "Video Hook para Redes Sociales",
+    "chapter": 9,
+    "chapter_title": "GENERACIÓN DE VIDEO",
+    "purpose": "Crear los primeros segundos de un Reel, TikTok o Short diseñados específicamente para detener el scroll.",
+    "variables": [
+      "[DURATION]",
+      "[TOPIC]",
+      "[TARGET AUDIENCE]",
+      "[HOOK]",
+      "[VISUAL CONCEPT]",
+      "[SUBJECT]",
+      "[ENVIRONMENT]",
+      "[CAMERA MOVEMENT]"
+    ],
+    "prompt": "Act as a viral short-form video director and advertising creative strategist.\nCreate a visually powerful [DURATION]-second opening sequence designed to stop the viewer from scrolling.\nTopic: [TOPIC]\nTarget Audience: [TARGET AUDIENCE]\nHook: [HOOK]\nVisual Concept: [VISUAL CONCEPT]\nSubject: [SUBJECT]\nEnvironment: [ENVIRONMENT]\nCamera Movement: [CAMERA MOVEMENT]\nThe first second must immediately create visual curiosity.\nUse strong composition, dynamic movement, visual contrast and a clear focal point.\nThe scene should communicate the hook visually before relying on dialogue or text.\nCreate a highly engaging opening suitable for TikTok, Instagram Reels and YouTube Shorts.",
+    "is_json": false
+  },
+  {
+    "id": 71,
+    "title": "Push In",
+    "chapter": 10,
+    "chapter_title": "MOVIMIENTOS DE CÁMARA",
+    "purpose": "Acercar progresivamente la cámara al sujeto. Es excelente para generar tensión, atención, importancia o impacto emocional.",
+    "variables": [],
+    "prompt": "Create a cinematic camera push-in toward the subject.\nSubject: [SUBJECT]\nEnvironment: [ENVIRONMENT]\nThe camera slowly moves forward toward the subject while maintaining the same composition and visual identity.\nStart with a wider framing and progressively move closer to the subject.\nMaintain realistic depth of field, natural perspective, smooth camera motion and consistent lighting.\nThe subject must remain stable and visually consistent throughout the shot.\nNo sudden movements, camera shake or distortion.",
+    "is_json": false
+  },
+  {
+    "id": 72,
+    "title": "Pull Out / Pull Back",
+    "chapter": 10,
+    "chapter_title": "MOVIMIENTOS DE CÁMARA",
+    "purpose": "Alejar la cámara progresivamente para revelar el entorno, ampliar la historia visual o generar sensación de escala.",
+    "variables": [],
+    "prompt": "Create a cinematic camera pull-back shot.\nSubject: [SUBJECT]\nEnvironment: [ENVIRONMENT]\nStart with a close or medium shot of the subject.\nThe camera smoothly moves backward, gradually revealing more of the surrounding environment.\nMaintain the subject's identity, proportions and position.\nUse realistic perspective, smooth camera movement, cinematic depth of field and consistent lighting.\nThe environment should progressively reveal itself as the camera moves backward.\nNo sudden camera movements or visual distortions.",
+    "is_json": false
+  },
+  {
+    "id": 73,
+    "title": "Tracking Shot",
+    "chapter": 10,
+    "chapter_title": "MOVIMIENTOS DE CÁMARA",
+    "purpose": "Seguir a un personaje, vehículo o producto mientras se desplaza. Ideal para acción, lifestyle, automóviles y comerciales.",
+    "variables": [],
+    "prompt": "Create a cinematic tracking shot following the subject.\nSubject: [SUBJECT]\nMovement: [MOVEMENT]\nEnvironment: [ENVIRONMENT]\nThe camera smoothly follows the subject while maintaining a consistent distance and framing.\nMatch the camera movement to the subject's speed.\nMaintain realistic motion, natural perspective, cinematic depth of field and stable composition.\nThe subject must remain visually consistent throughout the shot.\nUse smooth professional tracking-camera movement with no unwanted camera shake.",
+    "is_json": false
+  },
+  {
+    "id": 74,
+    "title": "Orbit / 360°",
+    "chapter": 10,
+    "chapter_title": "MOVIMIENTOS DE CÁMARA",
+    "purpose": "Hacer que la cámara rodee al sujeto mostrando diferentes ángulos. Especialmente útil para productos, automóviles, moda y personajes.",
+    "variables": [],
+    "prompt": "Create a cinematic camera orbit around the subject.\nSubject: [SUBJECT]\nEnvironment: [ENVIRONMENT]\nThe camera smoothly rotates around the subject while maintaining the subject as the visual focal point.\nThe subject remains stationary.\nMaintain consistent:\n- Identity\n- Shape\n- Proportions\n- Lighting\n- Materials\n- Background\nUse smooth controlled camera movement, realistic perspective and cinematic depth of field.\nThe orbit should feel like a professional commercial camera movement.",
+    "is_json": false
+  },
+  {
+    "id": 75,
+    "title": "Pan",
+    "chapter": 10,
+    "chapter_title": "MOVIMIENTOS DE CÁMARA",
+    "purpose": "Mover horizontalmente la cámara para revelar información dentro de una escena.",
+    "variables": [],
+    "prompt": "Create a smooth cinematic horizontal camera pan.\nSubject: [SUBJECT]\nStarting Point: [STARTING POINT]\nEnding Point: [ENDING POINT]\nThe camera smoothly pans horizontally from the starting point to the ending point.\nMaintain realistic camera movement, stable exposure and consistent lighting.\nReveal the scene progressively while maintaining cinematic composition.\nThe movement should feel controlled and professional, similar to a high-end commercial production.",
+    "is_json": false
+  },
+  {
+    "id": 76,
+    "title": "Tilt",
+    "chapter": 10,
+    "chapter_title": "MOVIMIENTOS DE CÁMARA",
+    "purpose": "Mover la cámara verticalmente hacia arriba o hacia abajo. Muy útil para revelaciones, arquitectura, personajes y productos.",
+    "variables": [],
+    "prompt": "Create a cinematic vertical camera tilt.\nSubject: [SUBJECT]\nDirection: [UPWARD / DOWNWARD]\nStarting Frame: [STARTING FRAME]\nEnding Frame: [ENDING FRAME]\nThe camera smoothly tilts vertically while maintaining realistic perspective and cinematic composition.\nReveal the subject progressively.\nMaintain consistent lighting, proportions, textures and visual identity.\nUse smooth professional camera movement with no sudden changes.",
+    "is_json": false
+  },
+  {
+    "id": 77,
+    "title": "Crane / Jib Shot",
+    "chapter": 10,
+    "chapter_title": "MOVIMIENTOS DE CÁMARA",
+    "purpose": "Elevar o descender la cámara para crear una sensación de escala, espectacularidad o revelación cinematográfica.",
+    "variables": [],
+    "prompt": "Create a cinematic crane camera movement.\nSubject: [SUBJECT]\nEnvironment: [ENVIRONMENT]\nThe camera begins at: [STARTING POSITION]\nand smoothly rises to: [ENDING POSITION]\nAs the camera rises, progressively reveal the environment and spatial scale of the scene.\nMaintain smooth motion, realistic perspective, cinematic depth of field and consistent lighting.\nThe movement should feel like a professional crane or jib shot from a high-end film production.",
+    "is_json": false
+  },
+  {
+    "id": 78,
+    "title": "Handheld Cinematic",
+    "chapter": 10,
+    "chapter_title": "MOVIMIENTOS DE CÁMARA",
+    "purpose": "Simular una cámara operada manualmente para conseguir una sensación más orgánica, humana y documental.",
+    "variables": [],
+    "prompt": "Create a realistic cinematic handheld camera shot.\nSubject: [SUBJECT]\nAction: [ACTION]\nEnvironment: [ENVIRONMENT]\nUse subtle natural handheld camera movement.\nThe camera should have slight organic motion and realistic micro-movements while maintaining visual stability.\nAvoid excessive shaking.\nMaintain consistent character identity, product details, lighting and environment.\nThe result should feel like professionally operated handheld cinematography rather than artificial camera movement.",
+    "is_json": false
+  },
+  {
+    "id": 79,
+    "title": "FPV / Dynamic Camera",
+    "chapter": 10,
+    "chapter_title": "MOVIMIENTOS DE CÁMARA",
+    "purpose": "Crear movimientos rápidos y envolventes, especialmente útiles para automóviles, deportes, arquitectura, eventos y escenas de alto impacto.",
+    "variables": [],
+    "prompt": "Create a dynamic cinematic FPV-style camera movement.\nSubject: [SUBJECT]\nEnvironment: [ENVIRONMENT]\nAction: [ACTION]\nThe camera rapidly moves through the environment while dynamically following the subject.\nUse smooth aerial-style motion, controlled acceleration, realistic inertia and precise camera orientation.\nCreate a strong sense of speed and immersion while maintaining visual clarity.\nThe subject must remain visually consistent throughout the sequence.\nAvoid unrealistic acceleration, distortion or sudden changes in direction.",
+    "is_json": false
+  },
+  {
+    "id": 80,
+    "title": "Movimiento Cinematográfico Combinado",
+    "chapter": 10,
+    "chapter_title": "MOVIMIENTOS DE CÁMARA",
+    "purpose": "Combinar varios movimientos de cámara dentro de una misma escena para conseguir una producción más sofisticada.",
+    "variables": [
+      "[SUBJECT]",
+      "[ENVIRONMENT]",
+      "[ACTION]",
+      "[CAMERA MOVEMENT 1]",
+      "[CAMERA MOVEMENT 2]",
+      "[CAMERA MOVEMENT 3]",
+      "[DURATION]"
+    ],
+    "prompt": "Act as a professional cinematographer and commercial film director.\nCreate a cinematic camera sequence using the following movements.\nSubject: [SUBJECT]\nEnvironment: [ENVIRONMENT]\nAction: [ACTION]\nCamera Sequence:\n1. [CAMERA MOVEMENT 1]\n2. [CAMERA MOVEMENT 2]\n3. [CAMERA MOVEMENT 3]\nDuration: [DURATION]\nThe camera movements must transition smoothly from one to another.\nMaintain:\n- Subject consistency\n- Realistic perspective\n- Natural motion\n- Consistent lighting\n- Cinematic depth of field\n- Stable exposure\n- Professional composition\nEach camera movement must support the visual storytelling rather than being used only for visual effect.\nCreate a polished high-end commercial cinematography sequence.\nLA REGLA DEL CAPÍTULO\nUn error muy común al generar video con IA es pedir: \"Haz un movimiento de cámara cinematográfico.\"\nEso deja demasiadas decisiones al modelo.\nUn director piensa diferente:\n¿Desde dónde empieza la cámara?\n↓\n¿Hacia dónde se mueve?\n↓\n¿A qué velocidad?\n↓\n¿Qué está revelando?\n↓\n¿Por qué ese movimiento ayuda a contar la historia?\nPor eso, el objetivo del capítulo no es memorizar 10 movimientos.\nEs aprender a utilizar la cámara como una herramienta narrativa.\nFórmula práctica:\nSUJETO + ACCIÓN + MOVIMIENTO + DIRECCIÓN + VELOCIDAD + PROPÓSITO\nCAPÍTULO 11\nMÚSICA Y DISEÑO MUSICAL CON IA\nObjetivo: aprender a crear música que acompañe la narrativa, refuerce emociones y eleve la percepción profesional de un contenido audiovisual.",
+    "is_json": false
+  },
+  {
+    "id": 81,
+    "title": "Prompt Maestro de Música",
+    "chapter": 11,
+    "chapter_title": "MÚSICA Y DISEÑO MUSICAL CON IA",
+    "purpose": "Crear una pieza musical desde cero definiendo género, emoción, instrumentos, energía y estructura. Ideal para utilizar en herramientas de generación musical con IA.",
+    "variables": [
+      "[PROJECT] → proyecto o video.",
+      "[PURPOSE] → publicidad, storytelling, presentación, etc.",
+      "[GENRE]",
+      "[MOOD]",
+      "[ENERGY LEVEL]",
+      "[DURATION]",
+      "[TEMPO]",
+      "[INSTRUMENTATION]"
+    ],
+    "prompt": "Act as a professional film composer and music producer.\nCreate an original music track for:\nProject: [PROJECT]\nPurpose: [PURPOSE]\nGenre: [GENRE]\nMood: [MOOD]\nEnergy Level: [ENERGY LEVEL]\nDuration: [DURATION]\nTempo: [TEMPO]\nInstrumentation: [INSTRUMENTATION]\nThe music should support the visual storytelling and emotional objective of the project.\nCreate a clear musical structure with:\n- Intro\n- Development\n- Emotional Build\n- Climax\n- Ending\nThe composition should feel original, professional and suitable for commercial audiovisual production.\nAvoid unnecessary complexity and keep the arrangement focused on the intended emotion.",
+    "is_json": false
+  },
+  {
+    "id": 82,
+    "title": "Música para Comercial",
+    "chapter": 11,
+    "chapter_title": "MÚSICA Y DISEÑO MUSICAL CON IA",
+    "purpose": "Crear música específicamente diseñada para publicidad, donde la música debe apoyar el mensaje sin competir con él.",
+    "variables": [
+      "[BRAND]",
+      "[PRODUCT]",
+      "[CAMPAIGN MESSAGE]",
+      "[TARGET AUDIENCE]",
+      "[EMOTION]",
+      "[GENRE]",
+      "[DURATION]"
+    ],
+    "prompt": "Act as a professional advertising composer.\nCreate an original commercial music track for:\nBrand: [BRAND]\nProduct: [PRODUCT]\nCampaign Message: [CAMPAIGN MESSAGE]\nTarget Audience: [TARGET AUDIENCE]\nDesired Emotion: [EMOTION]\nGenre: [GENRE]\nDuration: [DURATION]\nThe music should immediately establish the brand's emotional identity.\nCreate:\n- Strong opening\n- Memorable musical motif\n- Controlled energy build\n- Emotional climax\n- Clean ending suitable for a commercial CTA\nKeep enough sonic space for dialogue and voice-over.\nThe composition should sound modern, premium and commercially relevant.",
+    "is_json": false
+  },
+  {
+    "id": 83,
+    "title": "Música Cinematográfica",
+    "chapter": 11,
+    "chapter_title": "MÚSICA Y DISEÑO MUSICAL CON IA",
+    "purpose": "Crear música para cortos, escenas cinematográficas, storytelling y videos emocionales.",
+    "variables": [
+      "[SCENE]",
+      "[STORY CONTEXT]",
+      "[EMOTION]",
+      "[GENRE]",
+      "[DURATION]"
+    ],
+    "prompt": "Act as an award-winning cinematic film composer.\nCompose an original cinematic score for:\nScene: [SCENE]\nStory Context: [STORY CONTEXT]\nEmotion: [EMOTION]\nGenre: [GENRE]\nDuration: [DURATION]\nCreate an evolving musical composition that follows the emotional arc of the scene.\nStructure the music around:\n- Emotional Introduction\n- Tension or Development\n- Rising Intensity\n- Emotional Peak\n- Resolution\nUse cinematic instrumentation, dynamic orchestration, atmospheric textures and carefully controlled intensity.\nThe music should enhance the story without overpowering the visuals.",
+    "is_json": false
+  },
+  {
+    "id": 84,
+    "title": "Música para UGC",
+    "chapter": 11,
+    "chapter_title": "MÚSICA Y DISEÑO MUSICAL CON IA",
+    "purpose": "Crear música de fondo para contenido UGC, Reels y TikToks sin hacer que el contenido parezca un comercial tradicional.",
+    "variables": [
+      "[TOPIC]",
+      "[TARGET AUDIENCE]",
+      "[PLATFORM]",
+      "[MOOD]",
+      "[GENRE]",
+      "[DURATION]"
+    ],
+    "prompt": "Act as a social media music producer.\nCreate an original background track for a UGC-style video.\nTopic: [TOPIC]\nTarget Audience: [TARGET AUDIENCE]\nPlatform: [PLATFORM]\nMood: [MOOD]\nGenre: [GENRE]\nDuration: [DURATION]\nThe music should feel modern, natural and social-media friendly.\nKeep the arrangement simple and leave enough space for dialogue and voice-over.\nUse a memorable but subtle musical hook.\nAvoid excessive cinematic orchestration or overly dramatic elements.\nThe final track should support the content without distracting from the speaker.",
+    "is_json": false
+  },
+  {
+    "id": 85,
+    "title": "Música de Marca",
+    "chapter": 11,
+    "chapter_title": "MÚSICA Y DISEÑO MUSICAL CON IA",
+    "purpose": "Crear una identidad sonora coherente para una marca. Este prompt es especialmente útil cuando queremos que una empresa no solamente se vea reconocible, sino también suene reconocible.",
+    "variables": [
+      "[BRAND]",
+      "[INDUSTRY]",
+      "[BRAND PERSONALITY]",
+      "[TARGET AUDIENCE]",
+      "[CORE VALUES]",
+      "[EMOTION]"
+    ],
+    "prompt": "Act as a sonic branding strategist and professional music producer.\nDevelop a distinctive musical identity for:\nBrand: [BRAND]\nIndustry: [INDUSTRY]\nBrand Personality: [BRAND PERSONALITY]\nTarget Audience: [TARGET AUDIENCE]\nCore Values: [CORE VALUES]\nDesired Emotional Association: [EMOTION]\nCreate a sonic direction including:\n- Musical Genre\n- Tempo\n- Instrumentation\n- Sonic Texture\n- Energy\n- Emotional Character\n- Signature Musical Elements\nThe sound should be recognizable, memorable and aligned with the brand personality.\nAvoid generic corporate music.",
+    "is_json": false
+  },
+  {
+    "id": 86,
+    "title": "Música Emocional",
+    "chapter": 11,
+    "chapter_title": "MÚSICA Y DISEÑO MUSICAL CON IA",
+    "purpose": "Diseñar música específicamente alrededor de una emoción determinada. Ideal para storytelling, testimoniales, campañas sociales y contenido inspiracional.",
+    "variables": [
+      "[EMOTION]",
+      "[PROJECT]",
+      "[STORY]",
+      "[DURATION]"
+    ],
+    "prompt": "Act as an emotional film composer.\nCreate an original music track designed to evoke: [EMOTION]\nProject: [PROJECT]\nStory: [STORY]\nDuration: [DURATION]\nUse musical elements that reinforce the emotional experience.\nConsider:\n- Tempo\n- Harmony\n- Instrumentation\n- Dynamics\n- Musical Tension\n- Release\n- Silence\n- Emotional Build\nThe composition should gradually intensify the intended emotion without becoming melodramatic.\nCreate a sophisticated and emotionally authentic soundtrack.",
+    "is_json": false
+  },
+  {
+    "id": 87,
+    "title": "Música Épica",
+    "chapter": 11,
+    "chapter_title": "MÚSICA Y DISEÑO MUSICAL CON IA",
+    "purpose": "Crear música de alto impacto para trailers, lanzamientos, automóviles, deportes, tecnología y contenidos que necesitan sensación de poder y grandeza.",
+    "variables": [
+      "[PROJECT]",
+      "[VISUAL CONCEPT]",
+      "[EMOTION]",
+      "[DURATION]"
+    ],
+    "prompt": "Act as a professional trailer music composer.\nCreate a powerful epic soundtrack for:\nProject: [PROJECT]\nVisual Concept: [VISUAL CONCEPT]\nDesired Emotion:[EMOTION]\nDuration: [DURATION]\nCreate a progressive musical build featuring:\n- Atmospheric Introduction\n- Rhythmic Development\n- Increasing Tension\n- Powerful Percussion\n- Cinematic Impact\n- Emotional Climax\n- Strong Final Resolution\nUse orchestral elements, cinematic percussion, deep low frequencies and dramatic dynamics.\nThe music should feel powerful, modern and cinematic without becoming generic or repetitive.",
+    "is_json": false
+  },
+  {
+    "id": 88,
+    "title": "Música Adaptada a una Edición",
+    "chapter": 11,
+    "chapter_title": "MÚSICA Y DISEÑO MUSICAL CON IA",
+    "purpose": "Este es uno de los prompts más útiles para el flujo profesional. En lugar de crear música primero y luego intentar adaptar el video a ella, podemos analizar la edición y diseñar la música alrededor del montaje.",
+    "variables": [
+      "[VIDEO STRUCTURE]",
+      "[DURATION]",
+      "[SCENE BREAKDOWN]"
+    ],
+    "prompt": "Act as a professional film editor and music supervisor.\nAnalyze the following video structure: [VIDEO STRUCTURE]\nVideo Duration: [DURATION]\nScene Breakdown: [SCENE BREAKDOWN]\nCreate a music direction that synchronizes with the visual rhythm.\nIdentify:\n- Opening Musical Cue\n- Scene Transitions\n- Energy Changes\n- Emotional Moments\n- Musical Accents\n- Climax\n- Ending\nRecommend:\n- Tempo\n- Genre\n- Instrumentation\n- Energy Curve\n- Musical Structure\n- Key Transition Points\nThe music should support the pacing and emotional progression of the edit.\nCreate a detailed music-generation prompt based on this analysis.",
+    "is_json": false
+  },
+  {
+    "id": 89,
+    "title": "Prompt Maestro de Voice Over",
+    "chapter": 12,
+    "chapter_title": "VOZ Y DIRECCIÓN DE VOZ CON IA",
+    "purpose": "Crear una dirección profesional de voz para acompañar un video, definiendo quién habla, cómo habla y qué debe transmitir.",
+    "variables": [
+      "[PROJECT]",
+      "[SCRIPT]",
+      "[TARGET AUDIENCE]",
+      "[VOICE TYPE]",
+      "[AGE]",
+      "[TONE]",
+      "[EMOTION]",
+      "[PACING]"
+    ],
+    "prompt": "Act as a professional voice director and commercial script supervisor.\nCreate a detailed voice-over direction for:\nProject: [PROJECT]\nScript: [SCRIPT]\nTarget Audience: [TARGET AUDIENCE]\nVoice Type: [VOICE TYPE]\nAge: [AGE]\nTone: [TONE]\nEmotion: [EMOTION]\nPacing: [PACING]\nThe voice should communicate the intended message naturally and convincingly.\nDefine:\n- Vocal Tone\n- Emotional Intensity\n- Speaking Speed\n- Pausing\n- Emphasis\n- Pronunciation\n- Energy\n- Emotional Progression\nThe performance should sound natural, professional and emotionally connected to the audience.\nAvoid robotic delivery, excessive exaggeration and unnatural pauses.",
+    "is_json": false
+  },
+  {
+    "id": 90,
+    "title": "Voice Over Comercial",
+    "chapter": 12,
+    "chapter_title": "VOZ Y DIRECCIÓN DE VOZ CON IA",
+    "purpose": "Crear una voz publicitaria persuasiva para anuncios de productos, servicios y campañas.",
+    "variables": [
+      "[BRAND]",
+      "[PRODUCT]",
+      "[SCRIPT]",
+      "[TARGET AUDIENCE]",
+      "[BRAND PERSONALITY]",
+      "[EMOTION]"
+    ],
+    "prompt": "Act as a professional advertising voice director.\nCreate a commercial voice-over performance for:\nBrand: [BRAND]\nProduct: [PRODUCT]\nScript: [SCRIPT]\nTarget Audience: [TARGET AUDIENCE]\nBrand Personality: [BRAND PERSONALITY]\nDesired Emotion: [EMOTION]\nThe voice should sound:\n- Confident\n- Natural\n- Persuasive\n- Clear\n- Professional\n- Emotionally engaging\nUse strategic pauses and emphasis on the most important words.\nThe performance should sell the idea without sounding aggressive or overly promotional.\nEnd with a confident and memorable delivery of the call to action.",
+    "is_json": false
+  },
+  {
+    "id": 91,
+    "title": "Voz UGC",
+    "chapter": 12,
+    "chapter_title": "VOZ Y DIRECCIÓN DE VOZ CON IA",
+    "purpose": "Crear una voz que parezca la de una persona real recomendando un producto, evitando el típico tono de anuncio.",
+    "variables": [
+      "[CHARACTER]",
+      "[PRODUCT]",
+      "[SCRIPT]",
+      "[RELATIONSHIP]",
+      "[EMOTION]"
+    ],
+    "prompt": "Act as a professional UGC voice director.\nCreate a natural conversational voice performance.\nCharacter: [CHARACTER]\nProduct: [PRODUCT]\nScript: [SCRIPT]\nRelationship with the Audience: [RELATIONSHIP]\nEmotion: [EMOTION]\nThe voice should sound spontaneous, relatable and authentic.\nUse:\n- Natural conversational rhythm\n- Small variations in pitch\n- Realistic pauses\n- Subtle emotional reactions\n- Natural emphasis\n- Human imperfections\nAvoid sounding like a traditional commercial narrator.\nThe performance should feel like a real person genuinely sharing their experience with the audience.",
+    "is_json": false
+  },
+  {
+    "id": 92,
+    "title": "Voz Cinematográfica",
+    "chapter": 12,
+    "chapter_title": "VOZ Y DIRECCIÓN DE VOZ CON IA",
+    "purpose": "Crear una narración profunda y emocional para storytelling, documentales, trailers y videos cinematográficos.",
+    "variables": [
+      "[STORY]",
+      "[SCRIPT]",
+      "[NARRATOR DESCRIPTION]",
+      "[EMOTION]",
+      "[PACING]",
+      "[OPENING EMOTION]",
+      "[EMOTIONAL CLIMAX]",
+      "[ENDING EMOTION]"
+    ],
+    "prompt": "Act as a professional cinematic voice director.\nCreate a cinematic narration for:\nStory: [STORY]\nScript: [SCRIPT]\nNarrator: [NARRATOR DESCRIPTION]\nEmotion: [EMOTION]\nPacing: [PACING]\nThe narrator should have a distinctive and emotionally immersive presence.\nUse controlled vocal dynamics, intentional pauses, subtle changes in intensity and carefully emphasized words.\nThe performance should gradually evolve with the story.\nStart with: [OPENING EMOTION]\nBuild toward: [EMOTIONAL CLIMAX]\nEnd with: [ENDING EMOTION]\nAvoid excessive theatricality.\nThe narration should feel authentic, powerful and cinematic.",
+    "is_json": false
+  },
+  {
+    "id": 93,
+    "title": "Dirección de Emoción Vocal",
+    "chapter": 12,
+    "chapter_title": "VOZ Y DIRECCIÓN DE VOZ CON IA",
+    "purpose": "Dirigir la interpretación de una misma frase para conseguir una emoción específica. Es especialmente útil cuando una voz técnicamente correcta no transmite nada.",
+    "variables": [
+      "[LINE]",
+      "[EMOTION]",
+      "[CONTEXT]"
+    ],
+    "prompt": "Act as an expert voice acting coach.\nAnalyze the following line: [LINE]\nDesired Emotion: [EMOTION]\nContext: [CONTEXT]\nProvide detailed performance direction.\nExplain how the actor should control:\n- Tone\n- Pitch\n- Volume\n- Pace\n- Pauses\n- Breathing\n- Emphasis\n- Vocal Energy\n- Emotional Intensity\nThe final delivery should communicate [EMOTION] without sounding exaggerated.\nCreate a natural and believable vocal performance.",
+    "is_json": false
+  },
+  {
+    "id": 94,
+    "title": "Voz para Storytelling",
+    "chapter": 12,
+    "chapter_title": "VOZ Y DIRECCIÓN DE VOZ CON IA",
+    "purpose": "Crear una interpretación que acompañe una historia y evolucione emocionalmente en lugar de mantener el mismo tono durante todo el video.",
+    "variables": [
+      "[STORY]",
+      "[SCRIPT]",
+      "[STRUCTURE]"
+    ],
+    "prompt": "Act as a professional storytelling voice director.\nCreate a dynamic voice performance for:\nStory: [STORY]\nScript: [SCRIPT]\nNarrative Structure: [STRUCTURE]\nDivide the vocal performance into emotional stages:\n1. Hook\n2. Introduction\n3. Conflict\n4. Development\n5. Transformation\n6. Resolution\n7. CTA\nFor each stage define:\n- Tone\n- Energy\n- Pace\n- Emotional Intensity\n- Pauses\n- Key Words to Emphasize\nThe voice should evolve naturally throughout the story.\nAvoid delivering the entire script with the same emotional tone.",
+    "is_json": false
+  },
+  {
+    "id": 95,
+    "title": "Voz de Personaje",
+    "chapter": 12,
+    "chapter_title": "VOZ Y DIRECCIÓN DE VOZ CON IA",
+    "purpose": "Crear una identidad vocal consistente para un personaje que aparecerá en diferentes videos.",
+    "variables": [
+      "[CHARACTER]",
+      "[AGE]",
+      "[PERSONALITY]",
+      "[BACKGROUND]",
+      "[ROLE]",
+      "[EMOTIONAL TRAITS]"
+    ],
+    "prompt": "Act as a professional character voice designer.\nCreate a consistent vocal identity for:\nCharacter: [CHARACTER]\nAge: [AGE]\nPersonality: [PERSONALITY]\nBackground: [BACKGROUND]\nRole: [ROLE]\nEmotional Traits: [EMOTIONAL TRAITS]\nDefine the character's:\n- Voice Type\n- Pitch\n- Vocal Texture\n- Speaking Rhythm\n- Accent\n- Energy\n- Vocabulary\n- Emotional Range\n- Typical Expressions\nThe voice must remain consistent across multiple scenes and future episodes.\nCreate a detailed voice identity that can be reused for this character.",
+    "is_json": false
+  },
+  {
+    "id": 96,
+    "title": "Voz + Música + Video",
+    "chapter": 12,
+    "chapter_title": "VOZ Y DIRECCIÓN DE VOZ CON IA",
+    "purpose": "Este es el prompt avanzado del capítulo. Permite coordinar voz, música y narrativa audiovisual para que los tres elementos trabajen juntos.",
+    "variables": [
+      "[PROJECT]",
+      "[DURATION]",
+      "[SCRIPT]",
+      "[VISUAL STRUCTURE]",
+      "[MUSIC DESCRIPTION]"
+    ],
+    "prompt": "Act as a professional audiovisual director, voice director and music supervisor.\nAnalyze the following project:\nProject: [PROJECT]\nVideo Duration: [DURATION]\nScript: [SCRIPT]\nVisual Structure: [VISUAL STRUCTURE]\nMusic: [MUSIC DESCRIPTION]\nCreate an integrated audiovisual direction for:\nVOICE: Define tone, pacing, emotion, pauses and emphasis.\nMUSIC: Define energy, volume, emotional progression and musical transitions.\nVISUALS: Define how the voice and music should interact with the visual sequence.\nCreate a timeline describing:\n- Voice entrances\n- Voice pauses\n- Musical transitions\n- Emotional peaks\n- Visual changes\n- Important emphasis points\n- CTA delivery\nThe voice must remain intelligible above the music.\nThe music should support the narration without competing with it.\nCreate a cohesive and professionally directed audiovisual experience.",
+    "is_json": false
+  },
+  {
+    "id": 97,
+    "title": "Crear un Prompt Profesional",
+    "chapter": 13,
+    "chapter_title": "INGENIERÍA DE PROMPTS",
+    "purpose": "Convertir una idea sencilla en un prompt completo, estructurado y profesional.",
+    "variables": [
+      "[IDEA]",
+      "[OBJECTIVE]"
+    ],
+    "prompt": "Act as an expert AI prompt engineer and creative director.\nTransform the following idea into a professional AI prompt:\nIDEA: [IDEA]\nOBJECTIVE: [OBJECTIVE]\nCreate a structured prompt that clearly defines:\n- Role\n- Context\n- Objective\n- Subject\n- Action\n- Environment\n- Style\n- Composition\n- Technical specifications\n- Desired result\n- Restrictions\nDo not add unnecessary information.\nMake the prompt precise, clear and optimized for high-quality AI generation.\nReturn only the final prompt in English.",
+    "is_json": false
+  },
+  {
+    "id": 98,
+    "title": "Optimizar un Prompt",
+    "chapter": 13,
+    "chapter_title": "INGENIERÍA DE PROMPTS",
+    "purpose": "Tomar un prompt que ya existe y mejorarlo sin cambiar su intención original.",
+    "variables": [
+      "[ORIGINAL PROMPT]"
+    ],
+    "prompt": "Act as a senior AI prompt engineer.\nOptimize the following prompt: [ORIGINAL PROMPT]\nPreserve the original creative intention.\nImprove:\n- Clarity\n- Specificity\n- Structure\n- Visual description\n- Context\n- Technical precision\n- Consistency\n- Output quality\nRemove ambiguity, redundancy and unnecessary instructions.\nDo not change the core concept.\nReturn:\n1. Optimized Prompt\n2. Key Improvements",
+    "is_json": false
+  },
+  {
+    "id": 99,
+    "title": "Diagnóstico de un Prompt",
+    "chapter": 13,
+    "chapter_title": "INGENIERÍA DE PROMPTS",
+    "purpose": "Identificar por qué un prompt está produciendo resultados deficientes. Este prompt es especialmente útil para aprender que un mal resultado no siempre significa que la herramienta sea mala.",
+    "variables": [],
+    "prompt": "Act as an expert AI prompt auditor.\nAnalyze the following prompt: [PROMPT]\nIdentify potential problems related to:\n- Ambiguous instructions\n- Missing context\n- Conflicting instructions\n- Lack of visual detail\n- Poor structure\n- Missing technical specifications\n- Inconsistent character or product information\n- Unclear composition\n- Unrealistic expectations\nExplain why each problem may negatively affect the result.\nThen provide an improved version of the prompt.\nReturn the analysis in Spanish and the final optimized prompt in English.",
+    "is_json": false
+  },
+  {
+    "id": 100,
+    "title": "Adaptar un Prompt a Diferentes Herramientas",
+    "chapter": 13,
+    "chapter_title": "INGENIERÍA DE PROMPTS",
+    "purpose": "Convertir una misma idea creativa para diferentes modelos o plataformas de IA.",
+    "variables": [
+      "[ORIGINAL PROMPT]",
+      "[OBJECTIVE]",
+      "[PLATFORM 1]",
+      "[PLATFORM 2]",
+      "[PLATFORM 3]"
+    ],
+    "prompt": "Act as an expert AI prompt engineer specialized in multiple generative AI platforms.\nOriginal Prompt: [ORIGINAL PROMPT]\nCreative Objective: [OBJECTIVE]\nAdapt this prompt for:\n[PLATFORM 1]\n[PLATFORM 2]\n[PLATFORM 3]\nPreserve the same:\n- Creative concept\n- Subject\n- Action\n- Visual style\n- Mood\n- Composition\n- Desired result\nAdapt the wording, structure and technical instructions according to the strengths and limitations of each platform.\nReturn one optimized prompt for each platform.\nKeep all final prompts in English.",
+    "is_json": false
+  },
+  {
+    "id": 101,
+    "title": "Convertir una Imagen en Prompt",
+    "chapter": 13,
+    "chapter_title": "INGENIERÍA DE PROMPTS",
+    "purpose": "Analizar una imagen de referencia y convertir sus características visuales en un prompt reutilizable. Ideal para ingeniería inversa visual.",
+    "variables": [],
+    "prompt": "Act as a professional visual analyst, art director and AI prompt engineer.\nAnalyze the provided reference image.\nIdentify and describe:\n- Main Subject\n- Character Appearance\n- Product\n- Environment\n- Composition\n- Camera Angle\n- Lens\n- Lighting\n- Color Palette\n- Materials\n- Textures\n- Depth of Field\n- Mood\n- Visual Style\n- Image Quality\nThen create a professional image-generation prompt that recreates the visual characteristics of the reference image without copying any unnecessary elements.\nThe final prompt must be written in English.",
+    "is_json": false
+  },
+  {
+    "id": 102,
+    "title": "Crear Variaciones de un Prompt",
+    "chapter": 13,
+    "chapter_title": "INGENIERÍA DE PROMPTS",
+    "purpose": "Generar diferentes versiones de una misma idea sin perder el concepto original. Esto es muy útil para campañas publicitarias donde necesitamos 10 piezas diferentes a partir de una misma idea.",
+    "variables": [
+      "[CONCEPT]",
+      "[ORIGINAL PROMPT]",
+      "[NUMBER]"
+    ],
+    "prompt": "Act as a creative director and AI prompt engineer.\nOriginal Creative Concept: [CONCEPT]\nOriginal Prompt: [ORIGINAL PROMPT]\nCreate [NUMBER] different visual variations.\nMaintain the same:\n- Product or Character\n- Brand Identity\n- Core Message\n- Creative Concept\nChange only:\n- Environment\n- Composition\n- Camera Angle\n- Lighting\n- Action\n- Visual Style\nEach variation should feel clearly different while remaining part of the same campaign.\nReturn all prompts in English.",
+    "is_json": false
+  },
+  {
+    "id": 103,
+    "title": "Crear un Prompt desde una Referencia + Objetivo",
+    "chapter": 13,
+    "chapter_title": "INGENIERÍA DE PROMPTS",
+    "purpose": "Combinar una imagen de referencia con un objetivo comercial. Es especialmente poderoso para publicidad porque evita que la IA simplemente \"copie una estética\" sin entender para qué se necesita la imagen.",
+    "variables": [
+      "[REFERENCE IMAGE]",
+      "[OBJECTIVE]",
+      "[PRODUCT]",
+      "[TARGET AUDIENCE]"
+    ],
+    "prompt": "Act as a senior advertising creative director and AI prompt engineer.\nReference Image: [REFERENCE IMAGE]\nAdvertising Objective: [OBJECTIVE]\nProduct: [PRODUCT]\nTarget Audience: [TARGET AUDIENCE]\nAnalyze the visual reference and create a new professional prompt inspired by its:\n- Composition\n- Lighting\n- Camera language\n- Color palette\n- Visual hierarchy\n- Mood\n- Art direction\nAdapt the concept specifically for the product and advertising objective.\nDo not simply reproduce the reference.\nCreate an original commercial concept that preserves the desired visual language.\nReturn the final prompt in English.",
+    "is_json": false
+  },
+  {
+    "id": 104,
+    "title": "Prompt Maestro / Prompt Architect",
+    "chapter": 13,
+    "chapter_title": "INGENIERÍA DE PROMPTS",
+    "purpose": "Sirve para construir un prompt profesional desde cero, tomando decisiones creativas, técnicas y estratégicas antes de escribirlo.",
+    "variables": [
+      "[PROJECT]",
+      "[OBJECTIVE]",
+      "[PRODUCT OR SUBJECT]",
+      "[TARGET AUDIENCE]",
+      "[CORE MESSAGE]",
+      "[EMOTION]",
+      "[FORMAT]",
+      "[REFERENCE]"
+    ],
+    "prompt": "Act as a senior Creative Director, Advertising Strategist, Art Director, Cinematographer and AI Prompt Engineer.\nYour task is to design the most effective AI generation prompt for the following project.\nPROJECT: [PROJECT]\nOBJECTIVE: [OBJECTIVE]\nPRODUCT OR SUBJECT: [PRODUCT OR SUBJECT]\nTARGET AUDIENCE: [TARGET AUDIENCE]\nCORE MESSAGE: [CORE MESSAGE]\nDESIRED EMOTION: [EMOTION]\nFORMAT: [FORMAT]\nREFERENCE: [REFERENCE]\nFirst, determine the creative direction.\nThen define:\n1. Concept\n2. Subject\n3. Action\n4. Environment\n5. Composition\n6. Camera\n7. Lighting\n8. Color\n9. Materials and textures\n10. Atmosphere\n11. Emotional direction\n12. Technical specifications\n13. Consistency requirements\n14. Negative constraints\nFinally, combine all relevant information into one highly detailed professional AI prompt.\nPrioritize clarity, consistency, visual storytelling and commercial effectiveness.\nDo not add unnecessary details.\nReturn:\nA. Creative Direction\nB. Final Professional Prompt in English\nC. Recommended Variables\nD. Optional Improvements",
+    "is_json": false
+  },
+  {
+    "id": 105,
+    "title": "Image JSON",
+    "chapter": 14,
+    "chapter_title": "FRAMEWORKS JSON",
+    "purpose": "Crear una estructura JSON para generar una imagen profesional.",
+    "variables": [],
+    "prompt": "{\n\"subject\": \"[SUJETO]\",\n\"environment\": \"[ENTORNO]\",\n\"style\": \"[ESTILO]\",\n\"composition\": \"[COMPOSICIÓN]\",\n\"camera\": \"[CÁMARA]\",\n\"lighting\": \"[ILUMINACIÓN]\",\n\"mood\": \"[EMOCIÓN]\",\n\"aspect_ratio\": \"[FORMATO]\",\n\"quality\": \"ultra photorealistic, professional commercial photography\"\n}",
+    "is_json": true
+  },
+  {
+    "id": 106,
+    "title": "Character JSON",
+    "chapter": 14,
+    "chapter_title": "FRAMEWORKS JSON",
+    "purpose": "Definir las características de un personaje y mantenerlas consistentes.",
+    "variables": [],
+    "prompt": "{\n\"character\": {\n\"name\": \"[NOMBRE]\",\n\"age\": \"[EDAD]\",\n\"gender\": \"[GÉNERO]\",\n\"appearance\": \"[APARIENCIA]\",\n\"hair\": \"[CABELLO]\",\n\"eyes\": \"[OJOS]\",\n\"skin\": \"[PIEL]\",\n\"body\": \"[CONTEXTURA]\",\n\"wardrobe\": \"[VESTUARIO]\",\n\"personality\": \"[PERSONALIDAD]\"\n},\n\"consistency\": {\n\"identity_lock\": true,\n\"facial_consistency\": true,\n\"body_consistency\": true\n}\n}",
+    "is_json": true
+  },
+  {
+    "id": 107,
+    "title": "Product JSON",
+    "chapter": 14,
+    "chapter_title": "FRAMEWORKS JSON",
+    "purpose": "Crear una ficha estructurada de un producto para mantener su identidad visual.",
+    "variables": [],
+    "prompt": "{\n\"product\": {\n\"name\": \"[PRODUCTO]\",\n\"category\": \"[CATEGORÍA]\",\n\"shape\": \"[FORMA]\",\n\"dimensions\": \"[DIMENSIONES]\",\n\"materials\": \"[MATERIALES]\",\n\"colors\": \"[COLORES]\",\n\"finish\": \"[ACABADO]\",\n\"branding\": \"[MARCA Y LOGO]\",\n\"details\": \"[DETALLES]\"\n},\n\"consistency\": {\n\"shape_lock\": true,\n\"color_lock\": true,\n\"branding_lock\": true,\n\"material_lock\": true\n}\n}",
+    "is_json": true
+  },
+  {
+    "id": 108,
+    "title": "Storyboard JSON",
+    "chapter": 14,
+    "chapter_title": "FRAMEWORKS JSON",
+    "purpose": "Organizar una video escena por escena antes de producirlo.",
+    "variables": [],
+    "prompt": "{\n\"project\": \"[PROYECTO]\",\n\"duration\": \"[DURACIÓN]\",\n\"format\": \"[FORMATO]\",\n\"scenes\": [\n{\n\"scene\": 1,\n\"duration\": \"[TIEMPO]\",\n\"action\": \"[ACCIÓN]\",\n\"camera\": \"[MOVIMIENTO]\",\n\"lighting\": \"[ILUMINACIÓN]\",\n\"audio\": \"[AUDIO]\"\n},\n{\n\"scene\": 2,\n\"duration\": \"[TIEMPO]\",\n\"action\": \"[ACCIÓN]\",\n\"camera\": \"[MOVIMIENTO]\",\n\"lighting\": \"[ILUMINACIÓN]\",\n\"audio\": \"[AUDIO]\"\n}\n]\n}",
+    "is_json": true
+  },
+  {
+    "id": 109,
+    "title": "Video JSON",
+    "chapter": 14,
+    "chapter_title": "FRAMEWORKS JSON",
+    "purpose": "Estructurar una escena completa de video.",
+    "variables": [],
+    "prompt": "{\n\"video\": {\n\"duration\": \"[DURACIÓN]\",\n\"subject\": \"[SUJETO]\",\n\"action\": \"[ACCIÓN]\",\n\"environment\": \"[ENTORNO]\",\n\"style\": \"[ESTILO]\",\n\"camera\": {\n\"movement\": \"[MOVIMIENTO]\",\n\"angle\": \"[ÁNGULO]\",\n\"lens\": \"[LENTE]\"\n},\n\"lighting\": \"[ILUMINACIÓN]\",\n\"mood\": \"[EMOCIÓN]\"\n}\n}",
+    "is_json": true
+  },
+  {
+    "id": 110,
+    "title": "UGC JSON",
+    "chapter": 14,
+    "chapter_title": "FRAMEWORKS JSON",
+    "purpose": "Crear videos UGC estructurados con personaje, producto, diálogo y acción.",
+    "variables": [],
+    "prompt": "{\n\"ugc_video\": {\n\"character\": \"[PERSONAJE]\",\n\"product\": \"[PRODUCTO]\",\n\"location\": \"[LUGAR]\",\n\"action\": \"[ACCIÓN]\",\n\"dialogue\": \"[DIÁLOGO]\",\n\"emotion\": \"[EMOCIÓN]\",\n\"camera_style\": \"natural handheld smartphone\",\n\"format\": \"vertical 9:16\"\n}\n}",
+    "is_json": true
+  },
+  {
+    "id": 111,
+    "title": "Commercial Production JSON",
+    "chapter": 14,
+    "chapter_title": "FRAMEWORKS JSON",
+    "purpose": "Organizar una producción publicitaria completa.",
+    "variables": [],
+    "prompt": "{\n\"commercial\": {\n\"brand\": \"[MARCA]\",\n\"product\": \"[PRODUCTO]\",\n\"objective\": \"[OBJETIVO]\",\n\"audience\": \"[PÚBLICO]\",\n\"concept\": \"[CONCEPTO]\",\n\"duration\": \"[DURACIÓN]\",\n\"scenes\": [\n{\n\"scene\": 1,\n\"visual\": \"[VISUAL]\",\n\"action\": \"[ACCIÓN]\",\n\"camera\": \"[CÁMARA]\",\n\"lighting\": \"[ILUMINACIÓN]\",\n\"voice\": \"[VOZ]\",\n\"music\": \"[MÚSICA]\"\n}\n],\n\"cta\": \"[CTA]\"\n}\n}",
+    "is_json": true
+  },
+  {
+    "id": 112,
+    "title": "MASTER PRODUCTION JSON",
+    "chapter": 14,
+    "chapter_title": "FRAMEWORKS JSON",
+    "purpose": "Integrar personaje + producto + imagen + video + cámara + audio en una sola estructura.",
+    "variables": [],
+    "prompt": "{\n\"project\": \"[PROYECTO]\",\n\"brand\": \"[MARCA]\",\n\"objective\": \"[OBJETIVO]\",\n\"character\": {\n\"identity\": \"[PERSONAJE]\",\n\"consistency\": true\n},\n\"product\": {\n\"identity\": \"[PRODUCTO]\",\n\"consistency\": true\n},\n\"visual\": {\n\"style\": \"[ESTILO]\",\n\"environment\": \"[ENTORNO]\",\n\"lighting\": \"[ILUMINACIÓN]\",\n\"composition\": \"[COMPOSICIÓN]\"\n},\n\"video\": {\n\"duration\": \"[DURACIÓN]\",\n\"action\": \"[ACCIÓN]\",\n\"camera\": \"[MOVIMIENTO]\"\n},\n\"audio\": {\n\"voice\": \"[VOZ]\",\n\"music\": \"[MÚSICA]\"\n},\n\"output\": {\n\"format\": \"[FORMATO]\",\n\"aspect_ratio\": \"[ASPECT RATIO]\",\n\"quality\": \"professional commercial quality\"\n}\n}",
+    "is_json": true
+  }
+]
