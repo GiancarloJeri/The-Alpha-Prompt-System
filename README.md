@@ -85,11 +85,11 @@ The Alpha Prompt System es parte de una visión más amplia: utilizar la intelig
 
 ## CONECTA CON GIANCARLO
 
-**Instagram:**  
-https://instagram.com/Giancarlo.Jeri
+💬 **Comunidad de WhatsApp:** [Únete a la comunidad](https://chat.whatsapp.com/FsmD3LTjThaGUtI35teHX0)
 
-**GitHub:**  
-https://github.com/GiancarloJeri
+📸 **Instagram:** [@GiancarloJeri](https://instagram.com/Giancarlo.Jeri)
+
+▶️ **YouTube:** [Giancarlo Jerí](https://youtube.com/@giancarlojeri?si=nzKX3EVYRPsdwPB9)
 
 ---
 
