@@ -1,61 +1,254 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="THE ALPHA PROMPT SYSTEM — biblioteca interactiva de prompts profesionales.">
-  <title>THE ALPHA PROMPT SYSTEM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="The Alpha Prompt System — 112 prompts profesionales con IA creados por Giancarlo Jerí.">
+
+  <title>THE ALPHA PROMPT SYSTEM — Giancarlo Jerí</title>
+
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
+  <!-- HEADER -->
   <header class="topbar">
+
     <div class="brand">
       <span class="eyebrow">GIANCARLO JERÍ</span>
-      <h1>THE ALPHA <span>PROMPT SYSTEM</span></h1>
-      <p>112 prompts profesionales para crear contenido, anuncios e imágenes con IA.</p>
+
+      <h1>
+        THE ALPHA
+        <span>PROMPT SYSTEM</span>
+      </h1>
+
+      <p>
+        112 prompts profesionales para crear contenido, anuncios e imágenes con IA.
+      </p>
     </div>
-    <div class="header-actions">
-      <a href="#inicio" class="ghost-btn">Inicio</a>
-      <a href="#prompts" class="gold-btn">Ver prompts</a>
-    </div>
+
+    <nav>
+      <a href="#autor">Sobre mí</a>
+      <a href="#contacto">Conecta</a>
+      <a href="https://giancarlojeri.github.io/The-Alpha-Prompt-System/" class="nav-button">
+        Ver prompts
+      </a>
+    </nav>
+
   </header>
 
-  <main id="inicio">
+
+  <!-- HERO -->
+  <main>
+
     <section class="hero">
+
       <div class="hero-copy">
-        <div class="kicker">DE LA IDEA AL CONTENIDO. DEL CONTENIDO A LA VENTA.</div>
-        <h2>Dirige la IA.<br><em>No dependas de ella.</em></h2>
-        <p>Explora, busca y copia cualquiera de los 112 prompts del sistema.</p>
+
+        <div class="hero-kicker">
+          DE LA IDEA AL CONTENIDO. DEL CONTENIDO A LA VENTA.
+        </div>
+
+        <h2>
+          Dirige la IA.
+          <span>No dependas de ella.</span>
+        </h2>
+
+        <p class="hero-description">
+          Explora, busca y utiliza una biblioteca de
+          <strong>112 prompts profesionales</strong>
+          diseñados para ayudarte a transformar ideas en contenido,
+          comunicación y oportunidades de venta.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+            href="https://giancarlojeri.github.io/The-Alpha-Prompt-System/"
+            class="primary-button"
+          >
+            ACCEDER AL SISTEMA →
+          </a>
+
+          <a href="#autor" class="secondary-button">
+            CONOCER AL AUTOR
+          </a>
+
+        </div>
+
       </div>
+
+
       <div class="hero-card">
-        <div class="hero-number">112</div>
-        <div class="hero-label">PROMPTS</div>
-        <div class="hero-line"></div>
-        <div class="hero-small">IA · CREACIÓN DIGITAL · VENTAS</div>
+
+        <div class="number">112</div>
+
+        <div class="card-label">
+          PROMPTS
+        </div>
+
+        <div class="card-line"></div>
+
+        <div class="card-footer">
+          IA · CREACIÓN DIGITAL · VENTAS
+        </div>
+
       </div>
+
     </section>
 
-    <section class="controls" id="prompts">
-      <div class="search-wrap">
-        <span>⌕</span>
-        <input id="search" type="search" placeholder="Buscar por nombre, uso, variable o contenido...">
+
+    <!-- ABOUT -->
+    <section id="autor" class="section author-section">
+
+      <div class="section-label">
+        SOBRE EL AUTOR
       </div>
-      <select id="chapterFilter" aria-label="Filtrar por capítulo">
-        <option value="all">Todos los capítulos</option>
-      </select>
-      <button id="clearBtn" class="clear-btn">Limpiar</button>
+
+      <h2>
+        GIANCARLO JERÍ
+      </h2>
+
+      <h3>
+        Creador digital · Mentor en IA · Ventas conscientes
+      </h3>
+
+      <div class="author-text">
+
+        <p>
+          Giancarlo Jerí es creador digital, empresario y mentor especializado
+          en inteligencia artificial generativa, creación de contenido digital
+          y ventas.
+        </p>
+
+        <p>
+          Su experiencia en el ámbito comercial se combina con la creación
+          digital y las nuevas tecnologías para ayudar a personas y negocios
+          a <strong>crear, comunicar y vender mejor.</strong>
+        </p>
+
+        <p>
+          The Alpha Prompt System nace de una visión sencilla:
+        </p>
+
+        <blockquote>
+          No se trata de pedirle más a la IA.<br>
+          Se trata de aprender a dirigirla mejor.
+        </blockquote>
+
+      </div>
+
+      <div class="work-areas">
+
+        <span>IA GENERATIVA</span>
+        <span>CREACIÓN DIGITAL</span>
+        <span>VENTAS</span>
+        <span>ESTRATEGIA</span>
+        <span>NEGOCIOS DIGITALES</span>
+
+      </div>
+
     </section>
 
-    <div id="resultInfo" class="result-info"></div>
-    <section id="cards" class="cards"></section>
+
+    <!-- CONTACT -->
+    <section id="contacto" class="section contact-section">
+
+      <div class="section-label">
+        CONECTA CON GIANCARLO
+      </div>
+
+      <h2>
+        Sigue el camino.
+      </h2>
+
+      <p>
+        Contenido, IA, creación digital, ventas y negocios.
+      </p>
+
+      <div class="social-links">
+
+        <a
+          href="https://instagram.com/Giancarlo.Jeri"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>Instagram</span>
+          <small>@Giancarlo.Jeri →</small>
+        </a>
+
+
+        <a
+          href="https://youtube.com/@giancarlojeri"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>YouTube</span>
+          <small>Canal de Giancarlo Jerí →</small>
+        </a>
+
+
+        <a
+          href="https://chat.whatsapp.com/FsmD3LTjThaGUtI35teHX0"
+          target="_blank"
+          rel="noopener"
+          class="whatsapp-link"
+        >
+          <span>Comunidad WhatsApp</span>
+          <small>Únete a la comunidad →</small>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- SYSTEM CTA -->
+    <section class="system-cta">
+
+      <div class="rocket">
+        🚀
+      </div>
+
+      <h2>
+        THE ALPHA PROMPT SYSTEM
+      </h2>
+
+      <p>
+        <strong>112 prompts.</strong>
+        Una metodología. Infinitas posibilidades.
+      </p>
+
+      <a
+        href="https://giancarlojeri.github.io/The-Alpha-Prompt-System/"
+        class="primary-button"
+      >
+        ACCEDER AL SISTEMA →
+      </a>
+
+    </section>
+
   </main>
 
+
+  <!-- FOOTER -->
   <footer>
-    <div><strong>THE ALPHA PROMPT SYSTEM</strong></div>
-    <div>Giancarlo Jerí · IA | Creación Digital | Ventas</div>
+
+    <div>
+      THE ALPHA PROMPT SYSTEM
+    </div>
+
+    <p>
+      Creado por <strong>Giancarlo Jerí</strong>
+    </p>
+
+    <p>
+      © 2026 Giancarlo Jerí. Todos los derechos reservados.
+    </p>
+
   </footer>
 
-  <div id="toast" class="toast">Prompt copiado ✓</div>
-  <script src="app.js"></script>
 </body>
 </html>
