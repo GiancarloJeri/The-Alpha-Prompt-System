@@ -1,57 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-        content="THE ALPHA PROMPT SYSTEM - Biblioteca privada de prompts profesionales.">
+  <meta
+    name="description"
+    content="THE ALPHA PROMPT SYSTEM - Biblioteca privada de prompts profesionales."
+  >
 
   <title>THE ALPHA PROMPT SYSTEM</title>
 
   <link rel="stylesheet" href="styles.css">
 
-  <!-- SUPABASE -->
+  <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
 
-  <!-- =====================================================
-       LOGIN / REGISTRO
-       ===================================================== -->
+  <!-- ============================= -->
+  <!-- LOGIN -->
+  <!-- ============================= -->
 
   <section id="authScreen" class="auth-screen">
 
     <div class="auth-container">
 
-      <div class="auth-brand">
-        <div class="auth-eyebrow">
-          GIANCARLO JERÍ
-        </div>
-
-        <h1>
-          THE ALPHA
-          <span>PROMPT SYSTEM</span>
-        </h1>
-
-        <p>
-          Biblioteca privada de prompts profesionales
-          para crear contenido, anuncios e imágenes con IA.
-        </p>
+      <div class="brand-small">
+        GIANCARLO JERÍ
       </div>
 
+      <h1>
+        THE ALPHA
+        <span>PROMPT SYSTEM</span>
+      </h1>
+
+      <p class="auth-subtitle">
+        Biblioteca privada de prompts profesionales para crear
+        contenido, anuncios e imágenes con IA.
+      </p>
 
       <!-- LOGIN -->
 
-      <div id="loginForm" class="auth-form">
+      <div id="loginBox" class="auth-box">
 
         <h2>Iniciar sesión</h2>
 
-        <p class="auth-subtitle">
+        <p>
           Accede a tu biblioteca de prompts.
         </p>
 
@@ -69,32 +66,28 @@
           autocomplete="current-password"
         >
 
-        <button id="loginBtn" type="button">
+        <button id="loginBtn">
           INICIAR SESIÓN
         </button>
 
-        <p id="loginMessage" class="auth-message"></p>
-
-        <div class="auth-switch">
+        <p class="switch-auth">
           ¿No tienes una cuenta?
-          <button id="showRegisterBtn" type="button">
+          <button id="showRegisterBtn" class="text-btn">
             Crear cuenta
           </button>
-        </div>
+        </p>
 
       </div>
 
 
       <!-- REGISTRO -->
 
-      <div id="registerForm"
-           class="auth-form"
-           style="display:none;">
+      <div id="registerBox" class="auth-box hidden">
 
         <h2>Crear cuenta</h2>
 
-        <p class="auth-subtitle">
-          Regístrate para acceder al sistema.
+        <p>
+          Crea tu acceso privado a The Alpha Prompt System.
         </p>
 
         <input
@@ -113,36 +106,37 @@
 
         <input
           type="password"
-          id="registerPasswordConfirm"
+          id="registerPassword2"
           placeholder="Repite tu contraseña"
           autocomplete="new-password"
         >
 
-        <button id="registerBtn" type="button">
+        <button id="registerBtn">
           CREAR CUENTA
         </button>
 
-        <p id="registerMessage" class="auth-message"></p>
-
-        <div class="auth-switch">
+        <p class="switch-auth">
           ¿Ya tienes una cuenta?
-          <button id="showLoginBtn" type="button">
+          <button id="showLoginBtn" class="text-btn">
             Iniciar sesión
           </button>
-        </div>
+        </p>
 
       </div>
+
+
+      <div id="authMessage" class="auth-message"></div>
 
     </div>
 
   </section>
 
 
-  <!-- =====================================================
-       APLICACIÓN
-       ===================================================== -->
+  <!-- ============================= -->
+  <!-- APP -->
+  <!-- ============================= -->
 
-  <div id="appScreen" style="display:none;">
+  <main id="appScreen" class="hidden">
 
     <header class="topbar">
 
@@ -159,19 +153,15 @@
 
         <p>
           Biblioteca privada de prompts profesionales
-          para crear contenido, anuncios e imágenes con IA.
         </p>
 
       </div>
-
-
-      <!-- USUARIO -->
 
       <div class="user-area">
 
         <span id="userEmail"></span>
 
-        <button id="logoutBtn" type="button">
+        <button id="logoutBtn">
           CERRAR SESIÓN
         </button>
 
@@ -180,13 +170,9 @@
     </header>
 
 
-    <!-- =====================================================
-         FILTROS
-         ===================================================== -->
+    <section class="library">
 
-    <main>
-
-      <section class="filters">
+      <div class="controls">
 
         <input
           type="search"
@@ -200,37 +186,29 @@
           </option>
         </select>
 
-        <button id="clearBtn" type="button">
+        <button id="clearBtn">
           LIMPIAR
         </button>
 
-      </section>
+      </div>
+
+      <div id="resultInfo" class="result-info"></div>
+
+      <div id="cards"></div>
+
+    </section>
+
+  </main>
 
 
-      <!-- RESULTADOS -->
+  <!-- Toast -->
 
-      <div id="resultInfo"></div>
-
-      <section id="cards"></section>
-
-    </main>
-
-
-    <!-- TOAST -->
-
-    <div id="toast">
-      Prompt copiado.
-    </div>
-
+  <div id="toast">
+    PROMPT COPIADO ✓
   </div>
 
-
-  <!-- =====================================================
-       APP JS
-       ===================================================== -->
 
   <script src="app.js"></script>
 
 </body>
-
 </html>
