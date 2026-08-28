@@ -1,242 +1,279 @@
-// ======================================================
+// =====================================================
 // THE ALPHA PROMPT SYSTEM
-// Supabase Authentication + Prompt System
-// ======================================================
+// Supabase Authentication + Prompt Library
+// =====================================================
+
+
+// =====================================================
+// SUPABASE
+// =====================================================
 
 const SUPABASE_URL = 'https://veuiegyngkrktuatzjya.supabase.co';
-const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_tuH1BcZ1l59fPLupoUw4nw_B9PGYeW8';
+
+const SUPABASE_PUBLISHABLE_KEY =
+  'sb_publishable_tuH1BcZ1l59fPLupoUw4nw_B9PGYeW8';
 
 const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_PUBLISHABLE_KEY
 );
 
-// ======================================================
-// ELEMENTOS
-// ======================================================
+
+// =====================================================
+// ELEMENTOS DE AUTENTICACIÓN
+// =====================================================
+
+const authScreen = document.getElementById('authScreen');
+const appScreen = document.getElementById('appScreen');
+
+const loginForm = document.getElementById('loginForm');
+const registerForm = document.getElementById('registerForm');
+
+const loginEmail = document.getElementById('loginEmail');
+const loginPassword = document.getElementById('loginPassword');
+
+const registerEmail = document.getElementById('registerEmail');
+const registerPassword = document.getElementById('registerPassword');
+const registerPasswordConfirm =
+  document.getElementById('registerPasswordConfirm');
+
+const loginBtn = document.getElementById('loginBtn');
+const registerBtn = document.getElementById('registerBtn');
+
+const logoutBtn = document.getElementById('logoutBtn');
+
+const showRegisterBtn =
+  document.getElementById('showRegisterBtn');
+
+const showLoginBtn =
+  document.getElementById('showLoginBtn');
+
+const loginMessage =
+  document.getElementById('loginMessage');
+
+const registerMessage =
+  document.getElementById('registerMessage');
+
+const userEmail =
+  document.getElementById('userEmail');
+
+
+// =====================================================
+// ELEMENTOS DE LA BIBLIOTECA
+// =====================================================
 
 let prompts = [];
 let chapters = [];
 
 const cards = document.getElementById('cards');
 const search = document.getElementById('search');
-const chapterFilter = document.getElementById('chapterFilter');
-const resultInfo = document.getElementById('resultInfo');
-const clearBtn = document.getElementById('clearBtn');
-const toast = document.getElementById('toast');
+const chapterFilter =
+  document.getElementById('chapterFilter');
 
-// ======================================================
-// AUTHENTICATION
-// ======================================================
+const resultInfo =
+  document.getElementById('resultInfo');
 
-async function checkAuth() {
+const clearBtn =
+  document.getElementById('clearBtn');
 
+const toast =
+  document.getElementById('toast');
+
+
+// =====================================================
+// ESTADO
+// =====================================================
+
+let currentUser = null;
+
+
+// =====================================================
+// INICIO
+// =====================================================
+
+async function startApp() {
+
+  // Primero comprobamos la sesión
   const {
     data: { session }
   } = await supabaseClient.auth.getSession();
 
-  if (!session) {
-    showLoginScreen();
+  if (session) {
+    await showApp(session.user);
+  } else {
+    showAuth();
+  }
+
+
+  // Escuchar cambios de sesión
+  supabaseClient.auth.onAuthStateChange(
+    async (event, session) => {
+
+      console.log('Auth event:', event);
+
+      if (session) {
+        await showApp(session.user);
+      } else {
+        showAuth();
+      }
+
+    }
+  );
+}
+
+
+// =====================================================
+// MOSTRAR LOGIN
+// =====================================================
+
+function showAuth() {
+
+  currentUser = null;
+
+  if (authScreen) {
+    authScreen.style.display = 'flex';
+  }
+
+  if (appScreen) {
+    appScreen.style.display = 'none';
+  }
+
+  if (userEmail) {
+    userEmail.textContent = '';
+  }
+
+}
+
+
+// =====================================================
+// MOSTRAR APLICACIÓN
+// =====================================================
+
+async function showApp(user) {
+
+  currentUser = user;
+
+  if (authScreen) {
+    authScreen.style.display = 'none';
+  }
+
+  if (appScreen) {
+    appScreen.style.display = 'block';
+  }
+
+  if (userEmail) {
+    userEmail.textContent = user.email || '';
+  }
+
+  await initLibrary();
+
+}
+
+
+// =====================================================
+// LOGIN
+// =====================================================
+
+async function login() {
+
+  const email = loginEmail.value.trim();
+  const password = loginPassword.value;
+
+  clearMessages();
+
+  if (!email || !password) {
+
+    showLoginMessage(
+      'Completa tu email y contraseña.'
+    );
+
     return;
   }
 
-  showApp(session.user);
-}
+  setButtonLoading(loginBtn, true, 'ENTRANDO...');
 
-function showLoginScreen() {
-
-  document.body.innerHTML = `
-    <div class="auth-screen">
-
-      <div class="auth-card">
-
-        <div class="auth-brand">
-          <div class="auth-eyebrow">GIANCARLO JERÍ</div>
-          <h1>THE ALPHA <span>PROMPT SYSTEM</span></h1>
-          <p>Tu biblioteca privada de prompts profesionales.</p>
-        </div>
-
-        <div id="authMessage" class="auth-message"></div>
-
-        <div id="loginForm">
-
-          <h2>Bienvenido, Alpha.</h2>
-
-          <p class="auth-subtitle">
-            Inicia sesión para acceder al sistema.
-          </p>
-
-          <input
-            id="loginEmail"
-            type="email"
-            placeholder="Tu email"
-            autocomplete="email"
-          >
-
-          <input
-            id="loginPassword"
-            type="password"
-            placeholder="Tu contraseña"
-            autocomplete="current-password"
-          >
-
-          <button id="loginBtn" class="auth-btn">
-            INICIAR SESIÓN
-          </button>
-
-          <button id="forgotBtn" class="auth-link">
-            ¿Olvidaste tu contraseña?
-          </button>
-
-          <div class="auth-divider">
-            <span>¿Aún no tienes cuenta?</span>
-          </div>
-
-          <button id="showRegisterBtn" class="auth-secondary">
-            CREAR MI CUENTA
-          </button>
-
-        </div>
-
-
-        <div id="registerForm" style="display:none">
-
-          <h2>Únete al sistema.</h2>
-
-          <p class="auth-subtitle">
-            Crea tu cuenta para acceder a The Alpha Prompt System.
-          </p>
-
-          <input
-            id="registerName"
-            type="text"
-            placeholder="Tu nombre"
-            autocomplete="name"
-          >
-
-          <input
-            id="registerEmail"
-            type="email"
-            placeholder="Tu email"
-            autocomplete="email"
-          >
-
-          <input
-            id="registerPassword"
-            type="password"
-            placeholder="Crea una contraseña"
-            autocomplete="new-password"
-          >
-
-          <button id="registerBtn" class="auth-btn">
-            CREAR CUENTA
-          </button>
-
-          <button id="showLoginBtn" class="auth-link">
-            ← Ya tengo una cuenta
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-  `;
-
-  setupAuthEvents();
-}
-
-
-// ======================================================
-// AUTH EVENTS
-// ======================================================
-
-function setupAuthEvents() {
-
-  const loginForm = document.getElementById('loginForm');
-  const registerForm = document.getElementById('registerForm');
-
-  const showRegisterBtn =
-    document.getElementById('showRegisterBtn');
-
-  const showLoginBtn =
-    document.getElementById('showLoginBtn');
-
-  const loginBtn =
-    document.getElementById('loginBtn');
-
-  const registerBtn =
-    document.getElementById('registerBtn');
-
-  const forgotBtn =
-    document.getElementById('forgotBtn');
-
-
-  showRegisterBtn.addEventListener('click', () => {
-
-    loginForm.style.display = 'none';
-    registerForm.style.display = 'block';
-
-    clearAuthMessage();
-
+  const {
+    data,
+    error
+  } = await supabaseClient.auth.signInWithPassword({
+    email,
+    password
   });
 
-
-  showLoginBtn.addEventListener('click', () => {
-
-    registerForm.style.display = 'none';
-    loginForm.style.display = 'block';
-
-    clearAuthMessage();
-
-  });
+  setButtonLoading(
+    loginBtn,
+    false,
+    'INICIAR SESIÓN'
+  );
 
 
-  loginBtn.addEventListener('click', loginUser);
+  if (error) {
 
-  registerBtn.addEventListener('click', registerUser);
+    console.error(error);
 
-  forgotBtn.addEventListener('click', resetPassword);
+    let message =
+      'No pudimos iniciar sesión.';
 
+    if (
+      error.message
+        .toLowerCase()
+        .includes('email not confirmed')
+    ) {
 
-  // Permitir ENTER para enviar formularios
+      message =
+        'Tu email todavía no ha sido confirmado. Revisa tu correo.';
 
-  document.addEventListener('keydown', e => {
+    } else if (
+      error.message
+        .toLowerCase()
+        .includes('invalid login credentials')
+    ) {
 
-    if (e.key !== 'Enter') return;
+      message =
+        'Email o contraseña incorrectos.';
 
-    if (loginForm.style.display !== 'none') {
-      loginUser();
-    } else {
-      registerUser();
     }
 
-  });
+    showLoginMessage(message);
+
+    return;
+  }
+
+
+  if (data.session) {
+
+    loginEmail.value = '';
+    loginPassword.value = '';
+
+    await showApp(data.session.user);
+
+  }
 
 }
 
 
-// ======================================================
-// REGISTER
-// ======================================================
+// =====================================================
+// REGISTRO
+// =====================================================
 
-async function registerUser() {
-
-  const name =
-    document.getElementById('registerName').value.trim();
+async function register() {
 
   const email =
-    document.getElementById('registerEmail').value.trim();
+    registerEmail.value.trim();
 
   const password =
-    document.getElementById('registerPassword').value;
+    registerPassword.value;
+
+  const passwordConfirm =
+    registerPasswordConfirm.value;
+
+  clearMessages();
 
 
-  if (!name || !email || !password) {
+  if (!email || !password || !passwordConfirm) {
 
-    showAuthMessage(
-      'Completa todos los campos.',
-      'error'
+    showRegisterMessage(
+      'Completa todos los campos.'
     );
 
     return;
@@ -245,44 +282,52 @@ async function registerUser() {
 
   if (password.length < 6) {
 
-    showAuthMessage(
-      'La contraseña debe tener al menos 6 caracteres.',
-      'error'
+    showRegisterMessage(
+      'La contraseña debe tener al menos 6 caracteres.'
     );
 
     return;
   }
 
 
-  setAuthButtonLoading(
-    'registerBtn',
+  if (password !== passwordConfirm) {
+
+    showRegisterMessage(
+      'Las contraseñas no coinciden.'
+    );
+
+    return;
+  }
+
+
+  setButtonLoading(
+    registerBtn,
     true,
     'CREANDO CUENTA...'
   );
 
 
-  const { data, error } =
-    await supabaseClient.auth.signUp({
-
-      email,
-      password,
-
-      options: {
-
-        data: {
-          full_name: name
-        },
-
-        emailRedirectTo:
-          'https://giancarlojeri.github.io/The-Alpha-Prompt-System/'
-
-      }
-
-    });
+  const redirectUrl =
+    'https://giancarlojeri.github.io/The-Alpha-Prompt-System/';
 
 
-  setAuthButtonLoading(
-    'registerBtn',
+  const {
+    data,
+    error
+  } = await supabaseClient.auth.signUp({
+
+    email,
+    password,
+
+    options: {
+      emailRedirectTo: redirectUrl
+    }
+
+  });
+
+
+  setButtonLoading(
+    registerBtn,
     false,
     'CREAR CUENTA'
   );
@@ -290,290 +335,270 @@ async function registerUser() {
 
   if (error) {
 
-    showAuthMessage(
-      translateAuthError(error.message),
-      'error'
+    console.error(error);
+
+    showRegisterMessage(
+      translateAuthError(error.message)
     );
 
     return;
   }
 
 
-  // Si Supabase exige confirmación de email
-
+  // Si Supabase requiere confirmación
   if (data.user && !data.session) {
 
-    showAuthMessage(
-      'Cuenta creada. Revisa tu email y confirma tu cuenta antes de iniciar sesión.',
-      'success'
+    registerEmail.value = '';
+    registerPassword.value = '';
+    registerPasswordConfirm.value = '';
+
+    showRegisterMessage(
+      'Cuenta creada. Revisa tu email y confirma tu cuenta antes de iniciar sesión.'
     );
 
     return;
   }
 
 
-  showAuthMessage(
-    'Cuenta creada correctamente.',
-    'success'
-  );
+  // Si la confirmación de email está desactivada
+  if (data.session) {
+
+    await showApp(data.session.user);
+
+  }
 
 }
 
 
-// ======================================================
-// LOGIN
-// ======================================================
+// =====================================================
+// LOGOUT
+// =====================================================
 
-async function loginUser() {
+async function logout() {
 
-  const email =
-    document.getElementById('loginEmail').value.trim();
-
-  const password =
-    document.getElementById('loginPassword').value;
-
-
-  if (!email || !password) {
-
-    showAuthMessage(
-      'Introduce tu email y contraseña.',
-      'error'
-    );
-
-    return;
+  if (logoutBtn) {
+    logoutBtn.disabled = true;
+    logoutBtn.textContent = 'SALIENDO...';
   }
-
-
-  setAuthButtonLoading(
-    'loginBtn',
-    true,
-    'ENTRANDO...'
-  );
-
-
-  const { data, error } =
-    await supabaseClient.auth.signInWithPassword({
-
-      email,
-      password
-
-    });
-
-
-  setAuthButtonLoading(
-    'loginBtn',
-    false,
-    'INICIAR SESIÓN'
-  );
-
-
-  if (error) {
-
-    showAuthMessage(
-      translateAuthError(error.message),
-      'error'
-    );
-
-    return;
-  }
-
-
-  showApp(data.user);
-
-}
-
-
-// ======================================================
-// PASSWORD RESET
-// ======================================================
-
-async function resetPassword() {
-
-  const email =
-    document.getElementById('loginEmail').value.trim();
-
-
-  if (!email) {
-
-    showAuthMessage(
-      'Primero escribe tu email.',
-      'error'
-    );
-
-    return;
-  }
-
 
   const { error } =
-    await supabaseClient.auth.resetPasswordForEmail(
-      email,
-      {
-        redirectTo:
-          'https://giancarlojeri.github.io/The-Alpha-Prompt-System/'
-      }
-    );
-
+    await supabaseClient.auth.signOut();
 
   if (error) {
+    console.error(error);
+  }
 
-    showAuthMessage(
-      translateAuthError(error.message),
-      'error'
-    );
+  if (logoutBtn) {
+    logoutBtn.disabled = false;
+    logoutBtn.textContent = 'CERRAR SESIÓN';
+  }
 
-    return;
+}
+
+
+// =====================================================
+// CAMBIAR ENTRE LOGIN / REGISTRO
+// =====================================================
+
+function showRegister() {
+
+  clearMessages();
+
+  loginForm.style.display = 'none';
+  registerForm.style.display = 'block';
+
+}
+
+
+function showLogin() {
+
+  clearMessages();
+
+  registerForm.style.display = 'none';
+  loginForm.style.display = 'block';
+
+}
+
+
+// =====================================================
+// MENSAJES
+// =====================================================
+
+function showLoginMessage(message) {
+
+  if (!loginMessage) return;
+
+  loginMessage.textContent = message;
+  loginMessage.style.display = 'block';
+
+}
+
+
+function showRegisterMessage(message) {
+
+  if (!registerMessage) return;
+
+  registerMessage.textContent = message;
+  registerMessage.style.display = 'block';
+
+}
+
+
+function clearMessages() {
+
+  if (loginMessage) {
+    loginMessage.textContent = '';
+    loginMessage.style.display = 'none';
+  }
+
+  if (registerMessage) {
+    registerMessage.textContent = '';
+    registerMessage.style.display = 'none';
+  }
+
+}
+
+
+// =====================================================
+// TRADUCIR ERRORES
+// =====================================================
+
+function translateAuthError(message) {
+
+  const text =
+    String(message || '').toLowerCase();
+
+
+  if (text.includes('already registered')) {
+    return 'Este email ya tiene una cuenta. Intenta iniciar sesión.';
   }
 
 
-  showAuthMessage(
-    'Te hemos enviado un email para restablecer tu contraseña.',
-    'success'
-  );
+  if (text.includes('invalid email')) {
+    return 'Introduce un email válido.';
+  }
+
+
+  if (text.includes('password')) {
+    return 'La contraseña no cumple los requisitos.';
+  }
+
+
+  if (text.includes('rate limit')) {
+    return 'Demasiados intentos. Espera unos minutos e inténtalo nuevamente.';
+  }
+
+
+  return 'No pudimos crear la cuenta. Inténtalo nuevamente.';
 
 }
 
 
-// ======================================================
-// SHOW APPLICATION
-// ======================================================
+// =====================================================
+// BOTONES
+// =====================================================
 
-function showApp(user) {
-
-  location.reload();
-
-}
-
-
-// ======================================================
-// AUTH MESSAGE
-// ======================================================
-
-function showAuthMessage(message, type = 'error') {
-
-  const box =
-    document.getElementById('authMessage');
-
-  if (!box) return;
-
-  box.textContent = message;
-
-  box.className =
-    `auth-message ${type}`;
-
-}
-
-
-function clearAuthMessage() {
-
-  const box =
-    document.getElementById('authMessage');
-
-  if (!box) return;
-
-  box.textContent = '';
-
-  box.className = 'auth-message';
-
-}
-
-
-function setAuthButtonLoading(id, loading, text) {
-
-  const button =
-    document.getElementById(id);
+function setButtonLoading(
+  button,
+  loading,
+  text
+) {
 
   if (!button) return;
 
   button.disabled = loading;
-
   button.textContent = text;
 
 }
 
 
-// ======================================================
-// AUTH ERROR TRANSLATION
-// ======================================================
+// =====================================================
+// INICIALIZAR BIBLIOTECA
+// =====================================================
 
-function translateAuthError(message) {
+async function initLibrary() {
 
-  const errors = {
+  try {
 
-    'Invalid login credentials':
-      'Email o contraseña incorrectos.',
+    const [
+      promptsResponse,
+      chaptersResponse
+    ] = await Promise.all([
 
-    'Email not confirmed':
-      'Debes confirmar tu email antes de iniciar sesión.',
+      fetch('prompts.json'),
 
-    'User already registered':
-      'Este email ya tiene una cuenta.',
+      fetch('chapters.json')
 
-    'Password should be at least 6 characters':
-      'La contraseña debe tener al menos 6 caracteres.'
-
-  };
+    ]);
 
 
-  return errors[message] || message;
+    if (!promptsResponse.ok) {
+      throw new Error('No se pudo cargar prompts.json');
+    }
+
+
+    if (!chaptersResponse.ok) {
+      throw new Error('No se pudo cargar chapters.json');
+    }
+
+
+    prompts =
+      await promptsResponse.json();
+
+    chapters =
+      await chaptersResponse.json();
+
+
+    // Limpiar opciones anteriores
+    chapterFilter.innerHTML = `
+      <option value="all">
+        Todos los capítulos
+      </option>
+    `;
+
+
+    chapters.forEach(c => {
+
+      const option =
+        document.createElement('option');
+
+      option.value = c.id;
+
+      option.textContent =
+        `Capítulo ${c.id} · ${c.title}`;
+
+      chapterFilter.appendChild(option);
+
+    });
+
+
+    render();
+
+    openFromUrl();
+
+  } catch (error) {
+
+    console.error(
+      'Error cargando biblioteca:',
+      error
+    );
+
+    cards.innerHTML = `
+      <div class="empty">
+        No pudimos cargar la biblioteca.
+        <br><br>
+        Recarga la página e inténtalo nuevamente.
+      </div>
+    `;
+
+  }
 
 }
 
 
-// ======================================================
-// LOGOUT
-// ======================================================
-
-async function logoutUser() {
-
-  await supabaseClient.auth.signOut();
-
-  location.reload();
-
-}
-
-
-// ======================================================
-// APPLICATION
-// ======================================================
-
-async function init() {
-
-  [prompts, chapters] = await Promise.all([
-
-    fetch('prompts.json')
-      .then(r => r.json()),
-
-    fetch('chapters.json')
-      .then(r => r.json())
-
-  ]);
-
-
-  chapters.forEach(c => {
-
-    const o =
-      document.createElement('option');
-
-    o.value = c.id;
-
-    o.textContent =
-      `Capítulo ${c.id} · ${c.title}`;
-
-    chapterFilter.appendChild(o);
-
-  });
-
-
-  render();
-
-  openFromUrl();
-
-}
-
-
-// ======================================================
-// OPEN PROMPT FROM URL
-// ======================================================
+// =====================================================
+// ABRIR PROMPT DESDE URL
+// =====================================================
 
 function openFromUrl() {
 
@@ -582,7 +607,9 @@ function openFromUrl() {
 
   const id =
     q.get('p') ||
-    (location.hash.match(/prompt-(\d+)/) || [])[1];
+    (location.hash.match(
+      /prompt-(\d+)/
+    ) || [])[1];
 
 
   if (!id) return;
@@ -621,14 +648,16 @@ function openFromUrl() {
 }
 
 
-// ======================================================
-// RENDER PROMPTS
-// ======================================================
+// =====================================================
+// RENDER DE PROMPTS
+// =====================================================
 
 function render() {
 
   const q =
-    search.value.trim().toLowerCase();
+    search.value
+      .trim()
+      .toLowerCase();
 
   const ch =
     chapterFilter.value;
@@ -637,12 +666,22 @@ function render() {
   const filtered =
     prompts.filter(p => {
 
+      const variables =
+        Array.isArray(p.variables)
+          ? p.variables.join(' ')
+          : '';
+
+
       const hay = [
 
         p.title,
+
         p.chapter_title,
+
         p.purpose,
-        p.variables.join(' '),
+
+        variables,
+
         p.prompt
 
       ]
@@ -652,10 +691,15 @@ function render() {
 
       return (
 
-        (!q || hay.includes(q)) &&
+        (!q || hay.includes(q))
 
-        (ch === 'all' ||
-          String(p.chapter) === ch)
+        &&
+
+        (
+          ch === 'all'
+          ||
+          String(p.chapter) === ch
+        )
 
       );
 
@@ -665,13 +709,19 @@ function render() {
   resultInfo.textContent =
     `Mostrando ${filtered.length} de ${prompts.length} prompts`;
 
+
   cards.innerHTML = '';
 
 
   if (!filtered.length) {
 
-    cards.innerHTML =
-      '<div class="empty">No encontramos prompts con esos criterios.<br>Prueba otra palabra o limpia los filtros.</div>';
+    cards.innerHTML = `
+      <div class="empty">
+        No encontramos prompts con esos criterios.
+        <br>
+        Prueba otra palabra o limpia los filtros.
+      </div>
+    `;
 
     return;
 
@@ -687,24 +737,28 @@ function render() {
     const article =
       document.createElement('article');
 
+
     article.className = 'card';
+
 
     article.id =
       `prompt-${String(p.id).padStart(3, '0')}`;
 
 
-    const vars =
-      p.variables.length
+    const variables =
+      Array.isArray(p.variables)
+        ? p.variables
+        : [];
 
-        ? `<div class="vars">
-            ${p.variables
-              .map(v =>
-                `<span class="var">
-                  ${escapeHtml(v)}
-                </span>`
-              )
-              .join('')}
-           </div>`
+
+    const vars =
+      variables.length
+
+        ? variables
+            .map(v =>
+              `<span class="var">${escapeHtml(v)}</span>`
+            )
+            .join('')
 
         : `<span class="var">
              Sin variables declaradas
@@ -715,7 +769,11 @@ function render() {
 
       <div class="card-top">
 
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="
+          display:flex;
+          gap:14px;
+          align-items:flex-start
+        ">
 
           <div class="num">
             ${String(p.id).padStart(3, '0')}
@@ -728,13 +786,15 @@ function render() {
             </h3>
 
             <div class="chapter">
-              Capítulo ${p.chapter} ·
+              Capítulo ${p.chapter}
+              ·
               ${escapeHtml(p.chapter_title)}
             </div>
 
           </div>
 
         </div>
+
 
         ${
           p.is_json
@@ -749,6 +809,7 @@ function render() {
         ¿Para qué sirve?
       </div>
 
+
       <p class="purpose">
         ${escapeHtml(p.purpose)}
       </p>
@@ -757,6 +818,7 @@ function render() {
       <div class="section-label">
         Variables
       </div>
+
 
       <div class="vars">
         ${vars}
@@ -767,17 +829,17 @@ function render() {
         Prompt
       </div>
 
+
       <div class="prompt-box">
 
-        <pre>
-          ${escapeHtml(p.prompt)}
-        </pre>
+        <pre>${escapeHtml(p.prompt)}</pre>
 
         <div class="copy-row">
 
           <button
             class="copy-btn"
-            data-id="${p.id}">
+            data-id="${p.id}"
+          >
             COPIAR PROMPT
           </button>
 
@@ -798,22 +860,24 @@ function render() {
 }
 
 
-// ======================================================
-// COPY PROMPT
-// ======================================================
+// =====================================================
+// COPIAR PROMPT
+// =====================================================
 
 async function copyPrompt(id) {
 
   const p =
     prompts.find(x => x.id === id);
 
+
   if (!p) return;
 
 
   try {
 
-    await navigator.clipboard
-      .writeText(p.prompt);
+    await navigator.clipboard.writeText(
+      p.prompt
+    );
 
   } catch (e) {
 
@@ -823,7 +887,6 @@ async function copyPrompt(id) {
     ta.value = p.prompt;
 
     ta.style.position = 'fixed';
-
     ta.style.opacity = '0';
 
     document.body.appendChild(ta);
@@ -837,36 +900,162 @@ async function copyPrompt(id) {
   }
 
 
-  toast.classList.add('show');
+  if (toast) {
 
-  setTimeout(
-    () => toast.classList.remove('show'),
-    1400
+    toast.classList.add('show');
+
+    setTimeout(() => {
+
+      toast.classList.remove('show');
+
+    }, 1400);
+
+  }
+
+}
+
+
+// =====================================================
+// ESCAPE HTML
+// =====================================================
+
+function escapeHtml(s) {
+
+  return String(s ?? '')
+    .replace(
+      /[&<>"']/g,
+      m => ({
+
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+
+      }[m])
+    );
+
+}
+
+
+// =====================================================
+// EVENTOS
+// =====================================================
+
+if (loginBtn) {
+
+  loginBtn.addEventListener(
+    'click',
+    login
   );
 
 }
 
 
-// ======================================================
-// EVENTS
-// ======================================================
+if (registerBtn) {
 
-document.addEventListener('click', e => {
+  registerBtn.addEventListener(
+    'click',
+    register
+  );
 
-  const btn =
-    e.target.closest('.copy-btn');
+}
 
-  if (btn) {
 
-    copyPrompt(
-      Number(btn.dataset.id)
-    );
+if (logoutBtn) {
+
+  logoutBtn.addEventListener(
+    'click',
+    logout
+  );
+
+}
+
+
+if (showRegisterBtn) {
+
+  showRegisterBtn.addEventListener(
+    'click',
+    showRegister
+  );
+
+}
+
+
+if (showLoginBtn) {
+
+  showLoginBtn.addEventListener(
+    'click',
+    showLogin
+  );
+
+}
+
+
+// Enter en Login
+if (loginForm) {
+
+  loginForm.addEventListener(
+    'keydown',
+    e => {
+
+      if (e.key === 'Enter') {
+
+        e.preventDefault();
+
+        login();
+
+      }
+
+    }
+  );
+
+}
+
+
+// Enter en Registro
+if (registerForm) {
+
+  registerForm.addEventListener(
+    'keydown',
+    e => {
+
+      if (e.key === 'Enter') {
+
+        e.preventDefault();
+
+        register();
+
+      }
+
+    }
+  );
+
+}
+
+
+// Copiar prompt
+document.addEventListener(
+  'click',
+  e => {
+
+    const btn =
+      e.target.closest('.copy-btn');
+
+
+    if (btn) {
+
+      copyPrompt(
+        Number(btn.dataset.id)
+      );
+
+    }
 
   }
+);
 
-});
 
-
+// Búsqueda
 if (search) {
 
   search.addEventListener(
@@ -877,6 +1066,7 @@ if (search) {
 }
 
 
+// Filtro
 if (chapterFilter) {
 
   chapterFilter.addEventListener(
@@ -887,6 +1077,7 @@ if (chapterFilter) {
 }
 
 
+// Limpiar
 if (clearBtn) {
 
   clearBtn.addEventListener(
@@ -905,67 +1096,8 @@ if (clearBtn) {
 }
 
 
-// ======================================================
-// ESCAPE HTML
-// ======================================================
+// =====================================================
+// ARRANCAR
+// =====================================================
 
-function escapeHtml(s) {
-
-  return String(s ?? '')
-    .replace(
-      /[&<>"']/g,
-      m => ({
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#039;'
-      }[m])
-    );
-
-}
-
-
-// ======================================================
-// START
-// ======================================================
-
-async function start() {
-
-  await checkAuth();
-
-  // Si existe una sesión, checkAuth habrá
-  // recargado la aplicación.
-  // Si no existe sesión, muestra login.
-
-  if (
-    document.getElementById('cards')
-  ) {
-
-    await init();
-
-  }
-
-}
-
-
-// ======================================================
-// AUTH STATE
-// ======================================================
-
-supabaseClient.auth.onAuthStateChange(
-  (event, session) => {
-
-    if (event === 'SIGNED_OUT') {
-
-      location.reload();
-
-    }
-
-  }
-);
-
-
-// START
-
-start();
+startApp();
