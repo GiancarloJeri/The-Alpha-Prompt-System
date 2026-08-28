@@ -152,7 +152,7 @@ footer{
   .controls{grid-template-columns:1fr;position:static}
   .title{font-size:18px}
   .card{padding:18px}
-}
+  
 /* =====================================================
    THE ALPHA PROMPT SYSTEM
    AUTHENTICATION SCREEN
