@@ -8,10 +8,11 @@
 // SUPABASE
 // =====================================================
 
-const SUPABASE_URL = 'https://veuiegyngkrktuatzjya.supabase.co';
+const SUPABASE_URL =
+  "https://veuiegyngkrktuatzjya.supabase.co";
 
 const SUPABASE_PUBLISHABLE_KEY =
-  'sb_publishable_tuH1BcZ1l59fPLupoUw4nw_B9PGYeW8';
+  "sb_publishable_tuH1BcZ1l59fPLupoUw4nw_B9PGYeW8";
 
 const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
@@ -23,39 +24,53 @@ const supabaseClient = window.supabase.createClient(
 // ELEMENTOS DE AUTENTICACIÓN
 // =====================================================
 
-const authScreen = document.getElementById('authScreen');
-const appScreen = document.getElementById('appScreen');
+const authScreen =
+  document.getElementById("authScreen");
 
-const loginForm = document.getElementById('loginForm');
-const registerForm = document.getElementById('registerForm');
+const appScreen =
+  document.getElementById("appScreen");
 
-const loginEmail = document.getElementById('loginEmail');
-const loginPassword = document.getElementById('loginPassword');
+const loginBox =
+  document.getElementById("loginBox");
 
-const registerEmail = document.getElementById('registerEmail');
-const registerPassword = document.getElementById('registerPassword');
-const registerPasswordConfirm =
-  document.getElementById('registerPasswordConfirm');
+const registerBox =
+  document.getElementById("registerBox");
 
-const loginBtn = document.getElementById('loginBtn');
-const registerBtn = document.getElementById('registerBtn');
+const loginEmail =
+  document.getElementById("loginEmail");
 
-const logoutBtn = document.getElementById('logoutBtn');
+const loginPassword =
+  document.getElementById("loginPassword");
+
+const registerEmail =
+  document.getElementById("registerEmail");
+
+const registerPassword =
+  document.getElementById("registerPassword");
+
+const registerPassword2 =
+  document.getElementById("registerPassword2");
+
+const loginBtn =
+  document.getElementById("loginBtn");
+
+const registerBtn =
+  document.getElementById("registerBtn");
 
 const showRegisterBtn =
-  document.getElementById('showRegisterBtn');
+  document.getElementById("showRegisterBtn");
 
 const showLoginBtn =
-  document.getElementById('showLoginBtn');
+  document.getElementById("showLoginBtn");
 
-const loginMessage =
-  document.getElementById('loginMessage');
+const authMessage =
+  document.getElementById("authMessage");
 
-const registerMessage =
-  document.getElementById('registerMessage');
+const logoutBtn =
+  document.getElementById("logoutBtn");
 
 const userEmail =
-  document.getElementById('userEmail');
+  document.getElementById("userEmail");
 
 
 // =====================================================
@@ -65,19 +80,23 @@ const userEmail =
 let prompts = [];
 let chapters = [];
 
-const cards = document.getElementById('cards');
-const search = document.getElementById('search');
+const cards =
+  document.getElementById("cards");
+
+const search =
+  document.getElementById("search");
+
 const chapterFilter =
-  document.getElementById('chapterFilter');
+  document.getElementById("chapterFilter");
 
 const resultInfo =
-  document.getElementById('resultInfo');
+  document.getElementById("resultInfo");
 
 const clearBtn =
-  document.getElementById('clearBtn');
+  document.getElementById("clearBtn");
 
 const toast =
-  document.getElementById('toast');
+  document.getElementById("toast");
 
 
 // =====================================================
@@ -85,40 +104,39 @@ const toast =
 // =====================================================
 
 let currentUser = null;
+let libraryLoaded = false;
 
 
 // =====================================================
-// INICIO
+// MENSAJES
 // =====================================================
 
-async function startApp() {
+function showMessage(message, type = "info") {
 
-  // Primero comprobamos la sesión
-  const {
-    data: { session }
-  } = await supabaseClient.auth.getSession();
+  if (!authMessage) return;
 
-  if (session) {
-    await showApp(session.user);
-  } else {
-    showAuth();
+  authMessage.textContent = message;
+
+  authMessage.className = "auth-message";
+
+  if (type === "error") {
+    authMessage.classList.add("error");
   }
 
+  if (type === "success") {
+    authMessage.classList.add("success");
+  }
 
-  // Escuchar cambios de sesión
-  supabaseClient.auth.onAuthStateChange(
-    async (event, session) => {
+}
 
-      console.log('Auth event:', event);
 
-      if (session) {
-        await showApp(session.user);
-      } else {
-        showAuth();
-      }
+function clearMessage() {
 
-    }
-  );
+  if (!authMessage) return;
+
+  authMessage.textContent = "";
+  authMessage.className = "auth-message";
+
 }
 
 
@@ -131,16 +149,26 @@ function showAuth() {
   currentUser = null;
 
   if (authScreen) {
-    authScreen.style.display = 'flex';
+    authScreen.classList.remove("hidden");
   }
 
   if (appScreen) {
-    appScreen.style.display = 'none';
+    appScreen.classList.add("hidden");
+  }
+
+  if (loginBox) {
+    loginBox.classList.remove("hidden");
+  }
+
+  if (registerBox) {
+    registerBox.classList.add("hidden");
   }
 
   if (userEmail) {
-    userEmail.textContent = '';
+    userEmail.textContent = "";
   }
+
+  clearMessage();
 
 }
 
@@ -151,351 +179,69 @@ function showAuth() {
 
 async function showApp(user) {
 
+  if (!user) return;
+
   currentUser = user;
 
   if (authScreen) {
-    authScreen.style.display = 'none';
+    authScreen.classList.add("hidden");
   }
 
   if (appScreen) {
-    appScreen.style.display = 'block';
+    appScreen.classList.remove("hidden");
   }
 
   if (userEmail) {
-    userEmail.textContent = user.email || '';
+    userEmail.textContent = user.email || "";
   }
 
-  await initLibrary();
-
-}
-
-
-// =====================================================
-// LOGIN
-// =====================================================
-
-async function login() {
-
-  const email = loginEmail.value.trim();
-  const password = loginPassword.value;
-
-  clearMessages();
-
-  if (!email || !password) {
-
-    showLoginMessage(
-      'Completa tu email y contraseña.'
-    );
-
-    return;
-  }
-
-  setButtonLoading(loginBtn, true, 'ENTRANDO...');
-
-  const {
-    data,
-    error
-  } = await supabaseClient.auth.signInWithPassword({
-    email,
-    password
-  });
-
-  setButtonLoading(
-    loginBtn,
-    false,
-    'INICIAR SESIÓN'
-  );
-
-
-  if (error) {
-
-    console.error(error);
-
-    let message =
-      'No pudimos iniciar sesión.';
-
-    if (
-      error.message
-        .toLowerCase()
-        .includes('email not confirmed')
-    ) {
-
-      message =
-        'Tu email todavía no ha sido confirmado. Revisa tu correo.';
-
-    } else if (
-      error.message
-        .toLowerCase()
-        .includes('invalid login credentials')
-    ) {
-
-      message =
-        'Email o contraseña incorrectos.';
-
-    }
-
-    showLoginMessage(message);
-
-    return;
-  }
-
-
-  if (data.session) {
-
-    loginEmail.value = '';
-    loginPassword.value = '';
-
-    await showApp(data.session.user);
-
+  if (!libraryLoaded) {
+    await initLibrary();
   }
 
 }
 
 
 // =====================================================
-// REGISTRO
-// =====================================================
-
-async function register() {
-
-  const email =
-    registerEmail.value.trim();
-
-  const password =
-    registerPassword.value;
-
-  const passwordConfirm =
-    registerPasswordConfirm.value;
-
-  clearMessages();
-
-
-  if (!email || !password || !passwordConfirm) {
-
-    showRegisterMessage(
-      'Completa todos los campos.'
-    );
-
-    return;
-  }
-
-
-  if (password.length < 6) {
-
-    showRegisterMessage(
-      'La contraseña debe tener al menos 6 caracteres.'
-    );
-
-    return;
-  }
-
-
-  if (password !== passwordConfirm) {
-
-    showRegisterMessage(
-      'Las contraseñas no coinciden.'
-    );
-
-    return;
-  }
-
-
-  setButtonLoading(
-    registerBtn,
-    true,
-    'CREANDO CUENTA...'
-  );
-
-
-  const redirectUrl =
-    'https://giancarlojeri.github.io/The-Alpha-Prompt-System/';
-
-
-  const {
-    data,
-    error
-  } = await supabaseClient.auth.signUp({
-
-    email,
-    password,
-
-    options: {
-      emailRedirectTo: redirectUrl
-    }
-
-  });
-
-
-  setButtonLoading(
-    registerBtn,
-    false,
-    'CREAR CUENTA'
-  );
-
-
-  if (error) {
-
-    console.error(error);
-
-    showRegisterMessage(
-      translateAuthError(error.message)
-    );
-
-    return;
-  }
-
-
-  // Si Supabase requiere confirmación
-  if (data.user && !data.session) {
-
-    registerEmail.value = '';
-    registerPassword.value = '';
-    registerPasswordConfirm.value = '';
-
-    showRegisterMessage(
-      'Cuenta creada. Revisa tu email y confirma tu cuenta antes de iniciar sesión.'
-    );
-
-    return;
-  }
-
-
-  // Si la confirmación de email está desactivada
-  if (data.session) {
-
-    await showApp(data.session.user);
-
-  }
-
-}
-
-
-// =====================================================
-// LOGOUT
-// =====================================================
-
-async function logout() {
-
-  if (logoutBtn) {
-    logoutBtn.disabled = true;
-    logoutBtn.textContent = 'SALIENDO...';
-  }
-
-  const { error } =
-    await supabaseClient.auth.signOut();
-
-  if (error) {
-    console.error(error);
-  }
-
-  if (logoutBtn) {
-    logoutBtn.disabled = false;
-    logoutBtn.textContent = 'CERRAR SESIÓN';
-  }
-
-}
-
-
-// =====================================================
-// CAMBIAR ENTRE LOGIN / REGISTRO
+// CAMBIAR A REGISTRO
 // =====================================================
 
 function showRegister() {
 
-  clearMessages();
+  clearMessage();
 
-  loginForm.style.display = 'none';
-  registerForm.style.display = 'block';
+  if (loginBox) {
+    loginBox.classList.add("hidden");
+  }
+
+  if (registerBox) {
+    registerBox.classList.remove("hidden");
+  }
 
 }
 
+
+// =====================================================
+// CAMBIAR A LOGIN
+// =====================================================
 
 function showLogin() {
 
-  clearMessages();
+  clearMessage();
 
-  registerForm.style.display = 'none';
-  loginForm.style.display = 'block';
-
-}
-
-
-// =====================================================
-// MENSAJES
-// =====================================================
-
-function showLoginMessage(message) {
-
-  if (!loginMessage) return;
-
-  loginMessage.textContent = message;
-  loginMessage.style.display = 'block';
-
-}
-
-
-function showRegisterMessage(message) {
-
-  if (!registerMessage) return;
-
-  registerMessage.textContent = message;
-  registerMessage.style.display = 'block';
-
-}
-
-
-function clearMessages() {
-
-  if (loginMessage) {
-    loginMessage.textContent = '';
-    loginMessage.style.display = 'none';
+  if (registerBox) {
+    registerBox.classList.add("hidden");
   }
 
-  if (registerMessage) {
-    registerMessage.textContent = '';
-    registerMessage.style.display = 'none';
+  if (loginBox) {
+    loginBox.classList.remove("hidden");
   }
 
 }
 
 
 // =====================================================
-// TRADUCIR ERRORES
-// =====================================================
-
-function translateAuthError(message) {
-
-  const text =
-    String(message || '').toLowerCase();
-
-
-  if (text.includes('already registered')) {
-    return 'Este email ya tiene una cuenta. Intenta iniciar sesión.';
-  }
-
-
-  if (text.includes('invalid email')) {
-    return 'Introduce un email válido.';
-  }
-
-
-  if (text.includes('password')) {
-    return 'La contraseña no cumple los requisitos.';
-  }
-
-
-  if (text.includes('rate limit')) {
-    return 'Demasiados intentos. Espera unos minutos e inténtalo nuevamente.';
-  }
-
-
-  return 'No pudimos crear la cuenta. Inténtalo nuevamente.';
-
-}
-
-
-// =====================================================
-// BOTONES
+// LOADING DE BOTONES
 // =====================================================
 
 function setButtonLoading(
@@ -513,64 +259,565 @@ function setButtonLoading(
 
 
 // =====================================================
+// LOGIN
+// =====================================================
+
+async function login() {
+
+  const email =
+    loginEmail
+      ? loginEmail.value.trim()
+      : "";
+
+  const password =
+    loginPassword
+      ? loginPassword.value
+      : "";
+
+  clearMessage();
+
+  if (!email || !password) {
+
+    showMessage(
+      "Ingresa tu email y contraseña.",
+      "error"
+    );
+
+    return;
+  }
+
+  setButtonLoading(
+    loginBtn,
+    true,
+    "INGRESANDO..."
+  );
+
+  try {
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient.auth.signInWithPassword({
+        email: email,
+        password: password
+      });
+
+
+    if (error) {
+
+      console.error(
+        "Error de login:",
+        error
+      );
+
+      const errorText =
+        String(error.message || "")
+          .toLowerCase();
+
+
+      if (
+        errorText.includes(
+          "email not confirmed"
+        )
+      ) {
+
+        showMessage(
+          "Tu email todavía no ha sido confirmado. Revisa tu correo.",
+          "error"
+        );
+
+      } else {
+
+        showMessage(
+          "Email o contraseña incorrectos.",
+          "error"
+        );
+
+      }
+
+      return;
+    }
+
+
+    if (
+      data &&
+      data.session &&
+      data.user
+    ) {
+
+      if (loginEmail) {
+        loginEmail.value = "";
+      }
+
+      if (loginPassword) {
+        loginPassword.value = "";
+      }
+
+      await showApp(data.user);
+
+    }
+
+  } catch (error) {
+
+    console.error(
+      "Error inesperado:",
+      error
+    );
+
+    showMessage(
+      "Ocurrió un error al iniciar sesión.",
+      "error"
+    );
+
+  } finally {
+
+    setButtonLoading(
+      loginBtn,
+      false,
+      "INICIAR SESIÓN"
+    );
+
+  }
+
+}
+
+
+// =====================================================
+// REGISTRO
+// =====================================================
+
+async function register() {
+
+  const email =
+    registerEmail
+      ? registerEmail.value.trim()
+      : "";
+
+  const password =
+    registerPassword
+      ? registerPassword.value
+      : "";
+
+  const password2 =
+    registerPassword2
+      ? registerPassword2.value
+      : "";
+
+  clearMessage();
+
+
+  // Validar campos
+
+  if (
+    !email ||
+    !password ||
+    !password2
+  ) {
+
+    showMessage(
+      "Completa todos los campos.",
+      "error"
+    );
+
+    return;
+  }
+
+
+  // Validar contraseña
+
+  if (password.length < 6) {
+
+    showMessage(
+      "La contraseña debe tener al menos 6 caracteres.",
+      "error"
+    );
+
+    return;
+  }
+
+
+  // Confirmar contraseña
+
+  if (password !== password2) {
+
+    showMessage(
+      "Las contraseñas no coinciden.",
+      "error"
+    );
+
+    return;
+  }
+
+
+  setButtonLoading(
+    registerBtn,
+    true,
+    "CREANDO CUENTA..."
+  );
+
+
+  try {
+
+    const redirectUrl =
+      "https://giancarlojeri.github.io/The-Alpha-Prompt-System/";
+
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient.auth.signUp({
+
+        email: email,
+
+        password: password,
+
+        options: {
+
+          emailRedirectTo:
+            redirectUrl
+
+        }
+
+      });
+
+
+    if (error) {
+
+      console.error(
+        "Error de registro:",
+        error
+      );
+
+      showMessage(
+        translateAuthError(
+          error.message
+        ),
+        "error"
+      );
+
+      return;
+    }
+
+
+    console.log(
+      "Registro Supabase:",
+      data
+    );
+
+
+    // Supabase requiere confirmar email
+
+    if (
+      data.user &&
+      !data.session
+    ) {
+
+      if (registerEmail) {
+        registerEmail.value = "";
+      }
+
+      if (registerPassword) {
+        registerPassword.value = "";
+      }
+
+      if (registerPassword2) {
+        registerPassword2.value = "";
+      }
+
+      showMessage(
+        "Cuenta creada correctamente. Revisa tu email para confirmar tu cuenta.",
+        "success"
+      );
+
+      return;
+    }
+
+
+    // Cuenta creada y sesión activa
+
+    if (
+      data.session &&
+      data.user
+    ) {
+
+      await showApp(
+        data.user
+      );
+
+    }
+
+  } catch (error) {
+
+    console.error(
+      "Error inesperado:",
+      error
+    );
+
+    showMessage(
+      "Ocurrió un error inesperado al crear la cuenta.",
+      "error"
+    );
+
+  } finally {
+
+    setButtonLoading(
+      registerBtn,
+      false,
+      "CREAR CUENTA"
+    );
+
+  }
+
+}
+
+
+// =====================================================
+// TRADUCIR ERRORES DE SUPABASE
+// =====================================================
+
+function translateAuthError(message) {
+
+  const text =
+    String(message || "")
+      .toLowerCase();
+
+
+  if (
+    text.includes(
+      "already registered"
+    )
+  ) {
+
+    return (
+      "Este email ya tiene una cuenta. " +
+      "Intenta iniciar sesión."
+    );
+
+  }
+
+
+  if (
+    text.includes(
+      "user already registered"
+    )
+  ) {
+
+    return (
+      "Este email ya tiene una cuenta. " +
+      "Intenta iniciar sesión."
+    );
+
+  }
+
+
+  if (
+    text.includes(
+      "invalid email"
+    )
+  ) {
+
+    return (
+      "Introduce un email válido."
+    );
+
+  }
+
+
+  if (
+    text.includes(
+      "password"
+    )
+  ) {
+
+    return (
+      "La contraseña no cumple los requisitos."
+    );
+
+  }
+
+
+  if (
+    text.includes(
+      "rate limit"
+    )
+  ) {
+
+    return (
+      "Demasiados intentos. " +
+      "Espera unos minutos e inténtalo nuevamente."
+    );
+
+  }
+
+
+  return (
+    "No pudimos crear la cuenta. " +
+    "Inténtalo nuevamente."
+  );
+
+}
+
+
+// =====================================================
+// LOGOUT
+// =====================================================
+
+async function logout() {
+
+  setButtonLoading(
+    logoutBtn,
+    true,
+    "SALIENDO..."
+  );
+
+  try {
+
+    const {
+      error
+    } =
+      await supabaseClient.auth.signOut();
+
+
+    if (error) {
+
+      console.error(
+        "Error cerrando sesión:",
+        error
+      );
+
+      return;
+    }
+
+
+    showAuth();
+
+  } catch (error) {
+
+    console.error(
+      "Error inesperado:",
+      error
+    );
+
+  } finally {
+
+    setButtonLoading(
+      logoutBtn,
+      false,
+      "CERRAR SESIÓN"
+    );
+
+  }
+
+}
+
+
+// =====================================================
 // INICIALIZAR BIBLIOTECA
 // =====================================================
 
 async function initLibrary() {
+
+  if (!cards) {
+    console.error(
+      "No existe el elemento #cards"
+    );
+    return;
+  }
 
   try {
 
     const [
       promptsResponse,
       chaptersResponse
-    ] = await Promise.all([
+    ] =
+      await Promise.all([
 
-      fetch('prompts.json'),
+        fetch("prompts.json"),
 
-      fetch('chapters.json')
+        fetch("chapters.json")
 
-    ]);
+      ]);
 
 
     if (!promptsResponse.ok) {
-      throw new Error('No se pudo cargar prompts.json');
+
+      throw new Error(
+        "No se pudo cargar prompts.json"
+      );
+
     }
 
 
     if (!chaptersResponse.ok) {
-      throw new Error('No se pudo cargar chapters.json');
+
+      throw new Error(
+        "No se pudo cargar chapters.json"
+      );
+
     }
 
 
     prompts =
       await promptsResponse.json();
 
+
     chapters =
       await chaptersResponse.json();
 
 
-    // Limpiar opciones anteriores
-    chapterFilter.innerHTML = `
-      <option value="all">
-        Todos los capítulos
-      </option>
-    `;
+    console.log(
+      "Prompts cargados:",
+      prompts.length
+    );
 
 
-    chapters.forEach(c => {
+    console.log(
+      "Capítulos cargados:",
+      chapters.length
+    );
 
-      const option =
-        document.createElement('option');
 
-      option.value = c.id;
+    // Limpiar filtro
 
-      option.textContent =
-        `Capítulo ${c.id} · ${c.title}`;
+    if (chapterFilter) {
 
-      chapterFilter.appendChild(option);
+      chapterFilter.innerHTML = `
+        <option value="all">
+          Todos los capítulos
+        </option>
+      `;
 
-    });
 
+      chapters.forEach(
+        chapter => {
+
+          const option =
+            document.createElement(
+              "option"
+            );
+
+
+          option.value =
+            chapter.id;
+
+
+          option.textContent =
+            `Capítulo ${chapter.id} · ${chapter.title}`;
+
+
+          chapterFilter.appendChild(
+            option
+          );
+
+        }
+      );
+
+    }
+
+
+    libraryLoaded = true;
 
     render();
 
@@ -579,9 +826,10 @@ async function initLibrary() {
   } catch (error) {
 
     console.error(
-      'Error cargando biblioteca:',
+      "Error cargando biblioteca:",
       error
     );
+
 
     cards.innerHTML = `
       <div class="empty">
@@ -597,120 +845,85 @@ async function initLibrary() {
 
 
 // =====================================================
-// ABRIR PROMPT DESDE URL
-// =====================================================
-
-function openFromUrl() {
-
-  const q =
-    new URLSearchParams(location.search);
-
-  const id =
-    q.get('p') ||
-    (location.hash.match(
-      /prompt-(\d+)/
-    ) || [])[1];
-
-
-  if (!id) return;
-
-
-  const target =
-    document.getElementById(
-      `prompt-${String(id).padStart(3, '0')}`
-    );
-
-
-  if (target) {
-
-    setTimeout(() => {
-
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-
-    }, 150);
-
-
-    target.style.outline =
-      '1px solid #16a9ff';
-
-
-    setTimeout(() => {
-
-      target.style.outline = '';
-
-    }, 1800);
-
-  }
-
-}
-
-
-// =====================================================
 // RENDER DE PROMPTS
 // =====================================================
 
 function render() {
+
+  if (
+    !cards ||
+    !search ||
+    !chapterFilter ||
+    !resultInfo
+  ) {
+    return;
+  }
+
 
   const q =
     search.value
       .trim()
       .toLowerCase();
 
-  const ch =
+
+  const chapter =
     chapterFilter.value;
 
 
   const filtered =
-    prompts.filter(p => {
+    prompts.filter(
+      prompt => {
 
-      const variables =
-        Array.isArray(p.variables)
-          ? p.variables.join(' ')
-          : '';
-
-
-      const hay = [
-
-        p.title,
-
-        p.chapter_title,
-
-        p.purpose,
-
-        variables,
-
-        p.prompt
-
-      ]
-        .join(' ')
-        .toLowerCase();
+        const variables =
+          Array.isArray(
+            prompt.variables
+          )
+            ? prompt.variables.join(" ")
+            : "";
 
 
-      return (
+        const haystack = [
 
-        (!q || hay.includes(q))
+          prompt.title,
 
-        &&
+          prompt.chapter_title,
 
-        (
-          ch === 'all'
-          ||
-          String(p.chapter) === ch
-        )
+          prompt.purpose,
 
-      );
+          variables,
 
-    });
+          prompt.prompt
+
+        ]
+          .join(" ")
+          .toLowerCase();
+
+
+        const matchesSearch =
+          !q ||
+          haystack.includes(q);
+
+
+        const matchesChapter =
+          chapter === "all" ||
+          String(prompt.chapter) ===
+            String(chapter);
+
+
+        return (
+          matchesSearch &&
+          matchesChapter
+        );
+
+      }
+    );
 
 
   resultInfo.textContent =
     `Mostrando ${filtered.length} de ${prompts.length} prompts`;
 
 
-  cards.innerHTML = '';
+  cards.innerHTML = "";
 
 
   if (!filtered.length) {
@@ -718,144 +931,160 @@ function render() {
     cards.innerHTML = `
       <div class="empty">
         No encontramos prompts con esos criterios.
-        <br>
+        <br><br>
         Prueba otra palabra o limpia los filtros.
       </div>
     `;
 
     return;
-
   }
 
 
-  const frag =
+  const fragment =
     document.createDocumentFragment();
 
 
-  filtered.forEach(p => {
+  filtered.forEach(
+    prompt => {
 
-    const article =
-      document.createElement('article');
-
-
-    article.className = 'card';
-
-
-    article.id =
-      `prompt-${String(p.id).padStart(3, '0')}`;
+      const article =
+        document.createElement(
+          "article"
+        );
 
 
-    const variables =
-      Array.isArray(p.variables)
-        ? p.variables
-        : [];
+      article.className =
+        "card";
 
 
-    const vars =
-      variables.length
-
-        ? variables
-            .map(v =>
-              `<span class="var">${escapeHtml(v)}</span>`
-            )
-            .join('')
-
-        : `<span class="var">
-             Sin variables declaradas
-           </span>`;
+      article.id =
+        `prompt-${String(prompt.id).padStart(3, "0")}`;
 
 
-    article.innerHTML = `
+      const variables =
+        Array.isArray(
+          prompt.variables
+        )
+          ? prompt.variables
+          : [];
 
-      <div class="card-top">
 
-        <div style="
-          display:flex;
-          gap:14px;
-          align-items:flex-start
-        ">
+      const variablesHTML =
+        variables.length
 
-          <div class="num">
-            ${String(p.id).padStart(3, '0')}
-          </div>
+          ? variables
+              .map(
+                variable =>
+                  `<span class="var">${escapeHtml(variable)}</span>`
+              )
+              .join("")
 
-          <div>
+          : `
+              <span class="var">
+                Sin variables declaradas
+              </span>
+            `;
 
-            <h3 class="title">
-              ${escapeHtml(p.title)}
-            </h3>
 
-            <div class="chapter">
-              Capítulo ${p.chapter}
-              ·
-              ${escapeHtml(p.chapter_title)}
+      const badge =
+        prompt.is_json
+          ? "JSON"
+          : "PROMPT";
+
+
+      article.innerHTML = `
+
+        <div class="card-top">
+
+          <div style="
+            display:flex;
+            gap:14px;
+            align-items:flex-start;
+          ">
+
+            <div class="num">
+              ${String(prompt.id).padStart(3, "0")}
+            </div>
+
+            <div>
+
+              <h3 class="title">
+                ${escapeHtml(prompt.title)}
+              </h3>
+
+              <div class="chapter">
+                Capítulo ${prompt.chapter}
+                ·
+                ${escapeHtml(prompt.chapter_title)}
+              </div>
+
             </div>
 
           </div>
 
-        </div>
-
-
-        ${
-          p.is_json
-            ? '<span class="badge">JSON</span>'
-            : '<span class="badge">PROMPT</span>'
-        }
-
-      </div>
-
-
-      <div class="section-label">
-        ¿Para qué sirve?
-      </div>
-
-
-      <p class="purpose">
-        ${escapeHtml(p.purpose)}
-      </p>
-
-
-      <div class="section-label">
-        Variables
-      </div>
-
-
-      <div class="vars">
-        ${vars}
-      </div>
-
-
-      <div class="section-label">
-        Prompt
-      </div>
-
-
-      <div class="prompt-box">
-
-        <pre>${escapeHtml(p.prompt)}</pre>
-
-        <div class="copy-row">
-
-          <button
-            class="copy-btn"
-            data-id="${p.id}"
-          >
-            COPIAR PROMPT
-          </button>
+          <span class="badge">
+            ${badge}
+          </span>
 
         </div>
 
-      </div>
 
-    `;
-
-
-    frag.appendChild(article);
-
-  });
+        <div class="section-label">
+          ¿Para qué sirve?
+        </div>
 
 
-  cards.appendChild(frag);
+        <p class="purpose">
+          ${escapeHtml(prompt.purpose)}
+        </p>
+
+
+        <div class="section-label">
+          Variables
+        </div>
+
+
+        <div class="vars">
+          ${variablesHTML}
+        </div>
+
+
+        <div class="section-label">
+          Prompt
+        </div>
+
+
+        <div class="prompt-box">
+
+          <pre>${escapeHtml(prompt.prompt)}</pre>
+
+          <div class="copy-row">
+
+            <button
+              class="copy-btn"
+              data-id="${prompt.id}"
+            >
+              COPIAR PROMPT
+            </button>
+
+          </div>
+
+        </div>
+
+      `;
+
+
+      fragment.appendChild(
+        article
+      );
+
+    }
+  );
+
+
+  cards.appendChild(
+    fragment
+  );
 
 }
 
@@ -866,49 +1095,82 @@ function render() {
 
 async function copyPrompt(id) {
 
-  const p =
-    prompts.find(x => x.id === id);
+  const prompt =
+    prompts.find(
+      item =>
+        Number(item.id) ===
+        Number(id)
+    );
 
 
-  if (!p) return;
+  if (!prompt) return;
 
 
   try {
 
     await navigator.clipboard.writeText(
-      p.prompt
+      prompt.prompt
     );
 
-  } catch (e) {
+  } catch (error) {
 
-    const ta =
-      document.createElement('textarea');
+    console.warn(
+      "Clipboard API no disponible. Usando fallback."
+    );
 
-    ta.value = p.prompt;
 
-    ta.style.position = 'fixed';
-    ta.style.opacity = '0';
+    const textarea =
+      document.createElement(
+        "textarea"
+      );
 
-    document.body.appendChild(ta);
 
-    ta.select();
+    textarea.value =
+      prompt.prompt;
 
-    document.execCommand('copy');
 
-    ta.remove();
+    textarea.style.position =
+      "fixed";
+
+    textarea.style.opacity =
+      "0";
+
+
+    document.body.appendChild(
+      textarea
+    );
+
+
+    textarea.select();
+
+
+    document.execCommand(
+      "copy"
+    );
+
+
+    textarea.remove();
 
   }
 
 
   if (toast) {
 
-    toast.classList.add('show');
+    toast.classList.add(
+      "show"
+    );
 
-    setTimeout(() => {
 
-      toast.classList.remove('show');
+    setTimeout(
+      () => {
 
-    }, 1400);
+        toast.classList.remove(
+          "show"
+        );
+
+      },
+      1400
+    );
 
   }
 
@@ -916,23 +1178,95 @@ async function copyPrompt(id) {
 
 
 // =====================================================
-// ESCAPE HTML
+// ABRIR PROMPT DESDE URL
 // =====================================================
 
-function escapeHtml(s) {
+function openFromUrl() {
 
-  return String(s ?? '')
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
+
+
+  const id =
+    params.get("p") ||
+    (
+      window.location.hash.match(
+        /prompt-(\d+)/
+      ) || []
+    )[1];
+
+
+  if (!id) return;
+
+
+  const target =
+    document.getElementById(
+      `prompt-${String(id).padStart(3, "0")}`
+    );
+
+
+  if (!target) return;
+
+
+  setTimeout(
+    () => {
+
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+
+      target.style.outline =
+        "1px solid #C8922E";
+
+
+      setTimeout(
+        () => {
+
+          target.style.outline =
+            "";
+
+        },
+        1800
+      );
+
+    },
+    150
+  );
+
+}
+
+
+// =====================================================
+// ESCAPAR HTML
+// =====================================================
+
+function escapeHtml(value) {
+
+  return String(value ?? "")
     .replace(
       /[&<>"']/g,
-      m => ({
+      character => {
 
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#039;'
+        const entities = {
 
-      }[m])
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#039;"
+
+        };
+
+
+        return entities[
+          character
+        ];
+
+      }
     );
 
 }
@@ -942,66 +1276,80 @@ function escapeHtml(s) {
 // EVENTOS
 // =====================================================
 
+
+// Login
+
 if (loginBtn) {
 
   loginBtn.addEventListener(
-    'click',
+    "click",
     login
   );
 
 }
 
 
+// Registro
+
 if (registerBtn) {
 
   registerBtn.addEventListener(
-    'click',
+    "click",
     register
   );
 
 }
 
 
-if (logoutBtn) {
-
-  logoutBtn.addEventListener(
-    'click',
-    logout
-  );
-
-}
-
+// Mostrar registro
 
 if (showRegisterBtn) {
 
   showRegisterBtn.addEventListener(
-    'click',
+    "click",
     showRegister
   );
 
 }
 
 
+// Mostrar login
+
 if (showLoginBtn) {
 
   showLoginBtn.addEventListener(
-    'click',
+    "click",
     showLogin
   );
 
 }
 
 
-// Enter en Login
-if (loginForm) {
+// Logout
 
-  loginForm.addEventListener(
-    'keydown',
-    e => {
+if (logoutBtn) {
 
-      if (e.key === 'Enter') {
+  logoutBtn.addEventListener(
+    "click",
+    logout
+  );
 
-        e.preventDefault();
+}
+
+
+// =====================================================
+// ENTER EN LOGIN
+// =====================================================
+
+if (loginBox) {
+
+  loginBox.addEventListener(
+    "keydown",
+    event => {
+
+      if (event.key === "Enter") {
+
+        event.preventDefault();
 
         login();
 
@@ -1013,16 +1361,19 @@ if (loginForm) {
 }
 
 
-// Enter en Registro
-if (registerForm) {
+// =====================================================
+// ENTER EN REGISTRO
+// =====================================================
 
-  registerForm.addEventListener(
-    'keydown',
-    e => {
+if (registerBox) {
 
-      if (e.key === 'Enter') {
+  registerBox.addEventListener(
+    "keydown",
+    event => {
 
-        e.preventDefault();
+      if (event.key === "Enter") {
+
+        event.preventDefault();
 
         register();
 
@@ -1034,61 +1385,179 @@ if (registerForm) {
 }
 
 
-// Copiar prompt
+// =====================================================
+// COPIAR PROMPT
+// =====================================================
+
 document.addEventListener(
-  'click',
-  e => {
+  "click",
+  event => {
 
-    const btn =
-      e.target.closest('.copy-btn');
-
-
-    if (btn) {
-
-      copyPrompt(
-        Number(btn.dataset.id)
+    const button =
+      event.target.closest(
+        ".copy-btn"
       );
 
-    }
+
+    if (!button) return;
+
+
+    const id =
+      Number(
+        button.dataset.id
+      );
+
+
+    copyPrompt(id);
 
   }
 );
 
 
-// Búsqueda
+// =====================================================
+// BÚSQUEDA
+// =====================================================
+
 if (search) {
 
   search.addEventListener(
-    'input',
+    "input",
     render
   );
 
 }
 
 
-// Filtro
+// =====================================================
+// FILTRO DE CAPÍTULO
+// =====================================================
+
 if (chapterFilter) {
 
   chapterFilter.addEventListener(
-    'change',
+    "change",
     render
   );
 
 }
 
 
-// Limpiar
+// =====================================================
+// LIMPIAR FILTROS
+// =====================================================
+
 if (clearBtn) {
 
   clearBtn.addEventListener(
-    'click',
+    "click",
     () => {
 
-      search.value = '';
+      if (search) {
+        search.value = "";
+      }
 
-      chapterFilter.value = 'all';
+      if (chapterFilter) {
+        chapterFilter.value = "all";
+      }
 
       render();
+
+    }
+  );
+
+}
+
+
+// =====================================================
+// SESIÓN INICIAL
+// =====================================================
+
+async function startApp() {
+
+  try {
+
+    console.log(
+      "THE ALPHA PROMPT SYSTEM iniciando..."
+    );
+
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient.auth.getSession();
+
+
+    if (error) {
+
+      console.error(
+        "Error obteniendo sesión:",
+        error
+      );
+
+      showAuth();
+
+      return;
+    }
+
+
+    if (
+      data &&
+      data.session &&
+      data.session.user
+    ) {
+
+      await showApp(
+        data.session.user
+      );
+
+    } else {
+
+      showAuth();
+
+    }
+
+
+  } catch (error) {
+
+    console.error(
+      "Error iniciando aplicación:",
+      error
+    );
+
+    showAuth();
+
+  }
+
+
+  // Escuchar cambios de autenticación
+
+  supabaseClient.auth.onAuthStateChange(
+    async (
+      event,
+      session
+    ) => {
+
+      console.log(
+        "Auth event:",
+        event
+      );
+
+
+      if (
+        session &&
+        session.user
+      ) {
+
+        await showApp(
+          session.user
+        );
+
+      } else {
+
+        showAuth();
+
+      }
 
     }
   );
